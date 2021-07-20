@@ -1,0 +1,52 @@
+{
+  "__language": "Language",
+  "__languagename": "English",
+  
+  "__title": "chia",
+
+  "__store_center": "Manage Store",
+  "__download": "Download",
+  "__follow_us": "Follow us",
+  "__notifications": "Notifications",
+  "__helping_center": "Help",
+  "__categories": "Categories",
+
+  "__search_store": "Search for store",
+  "__no_notification":"no notification",
+  "__hot_keywords": "Hot keywords",
+
+  "__recommend_store": "Recommend",
+  "__hot_store": "Hot",
+  "__good_items": "Good Items",
+  "__shop_now": "Shop now",
+  "__store": "Store",
+  
+  "__functions": "Functions",
+  "__services": "Services",
+  "__more_resources": "More resources",
+  "__store_lecture": "Store lecture",
+  "__blog": "blog",
+  "__recommend_article": "Recommend article",
+  "__corporation" : "Corporation",
+  "__chia_copyright": "chia copyright",
+  "__terms_of_services": "Terms of services",
+  "__privacy_policy": "Privacy Policy",
+
+  "__register": "Register",
+  "__sign_in": "Sign in",
+  "__email_address": "Email",
+  "__password": "password",
+  "__required": "required",
+  "__email_address_invalid": "please enter valid email",
+  "__phone_number_invalid": "please enter valid phone number",
+  "__sign_out": "Sign out",
+  "__modify_account": "Modify Account",
+  "__modify_password": "Modify password",
+  "__old_password":"old password",
+  "__new_password": "new password",
+  "__confirm_new_password": "confirm new password",
+  "__password_failed": "new passwords should be same",
+  "__modify_info_success":"Modify success",
+
+  "__insufficient_permissions": "insufficient permissions"
+}
