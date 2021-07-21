@@ -178,17 +178,24 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <!-- <vue-telegram-login
+      mode="redirect"
+      telegram-login="chiamarket_bot"
+      redirect-url="https://www.chia-market.com/"
+    /> -->
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import LanguageSelect from "./LanguageSelect";
+// import { vueTelegramLogin } from "vue-telegram-login";
 
 export default {
   name: "Navbar",
   components: {
     LanguageSelect
+    // vueTelegramLogin
   },
   computed: {
     ...mapGetters({
