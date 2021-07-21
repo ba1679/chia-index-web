@@ -111,81 +111,77 @@
       <v-img
         src="https://cf.shopee.tw/file/b81648692a6302400d577b5c5a4cd83f_xxhdpi"
       ></v-img>
-      <!-- category -->
-      <!-- <v-card flat rounded="false" class="my-2" elevation="1">
-        <v-card-title><v-icon color="primary">mdi-view-list</v-icon>分類</v-card-title>
-        <v-divider />
-        <ul class="list-style-none d-flex flex-wrap justify-center pl-0">
-          <li class="text-center pa-3 category-card" v-for="i in 18" :key="i">
-            <a href="#" class="d-block">
-              <img src="https://picsum.photos/90" class="d-block" />
-              <p>女生衣著</p>
-            </a>
-          </li>
-        </ul>
-      </v-card> -->
-      <!-- recommend store -->
       <v-card flat rounded="false" class="my-2" elevation="1">
         <v-card-title><v-icon color="red">mdi-fire</v-icon>{{$t('__recommend_store')}}</v-card-title>
         <v-divider />
-        <v-container fluid>
-          <v-row dense>
-            <v-col sm="6" md="3" lg="2" v-for="i in 6" :key="i">
-              <v-card link>
-                <v-img contain src=https://picsum.photos/id/3/200></v-img>
-                <v-card-title class="text-h5-1 primary--text pb-0"> 
-                  店家名稱 
-                </v-card-title>
-                <v-card-text class="d-flex justify-space-around pa-0">
-                  <div>
-                    <v-icon small>mdi-earth</v-icon> <span>群組</span>
-                  </div>
-                  <div>
-                    <v-icon small>mdi-account-group</v-icon> <span>人氣: 1.52k</span>
-                  </div>
-                </v-card-text>
-                <v-card-text class="pb-0">
-                <v-divider />
-                </v-card-text>
-                <v-card-text>
-                  店家簡介dolor sit amet consectetur, adipisicing elit.
-                </v-card-text>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn outlined link color="primary" class="store-btn">{{$t('__shop_now')}} <v-icon class="icon-transition">mdi-arrow-right</v-icon></v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
+        <v-slide-group
+          class="pa-2"
+          show-arrows
+        >
+          <v-slide-item
+            v-for="n in 6"
+            :key="n"
+            class="mr-2" 
+          >
+          <v-card link max-width="250" class="ma-1">
+            <v-img contain src=https://picsum.photos/id/3/200></v-img>
+            <v-card-title class="text-h5-1 primary--text pb-0"> 
+              店家名稱 
+            </v-card-title>
+            <v-card-text class="pb-0">
+            <v-divider />
+            </v-card-text>
+            <v-card-text>
+              店家簡介dolor sit amet consectetur, adipisicing elit.
+            </v-card-text>
+            <v-card-text class="text-left py-0">
+                <v-icon small>mdi-account-group</v-icon> <span>1200 位粉絲</span>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn outlined link color="primary" class="store-btn">{{$t('__shop_now')}} <v-icon class="icon-transition">mdi-arrow-right</v-icon></v-btn>
+            </v-card-actions>
+          </v-card>
+          </v-slide-item>
+        </v-slide-group>
       </v-card>
       <!-- hot store -->
       <v-card flat rounded="false" class="my-2" elevation="1">
         <v-card-title><v-icon color="pink">mdi-account-group</v-icon>{{$t('__hot_store')}}</v-card-title>
         <v-divider />
-        <v-container fluid>
-          <v-row dense>
-            <v-col class="relative" :class="{'mb-3':isMobile}" sm="6" md="3" lg="2" v-for="i in 6" :key="i">
-              <div class="store-badge">
-                TOP {{i}}
-              </div>
-              <v-card link>
-                <v-img contain src=https://picsum.photos/id/50/200></v-img>
-                <v-card-title class="text-h5-1 primary--text pb-0"> 店家名稱 </v-card-title>
-                <v-card-text class="d-flex pa-0">
-                  <v-btn x-small text link> <v-icon small>mdi-earth</v-icon> <span>群組</span></v-btn>
-                   <v-btn x-small text link> <v-icon small>mdi-account-group</v-icon> <span>人氣: 1.52k</span></v-btn>
-                </v-card-text>
-                <v-card-text>
-                  店家簡介dolor sit amet consectetur, adipisicing elit.
-                </v-card-text>
-                <v-card-actions>
-                  <v-btn block color="primary">進入店家</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
+              <v-slide-group
+                class="pa-2"
+                show-arrows
+              >
+                <v-slide-item
+                  v-for="n in 6"
+                  :key="n"
+                  class="mr-2" 
+                >
+                <v-card link max-width="250" class="ma-1 mt-2 relative">
+                    <div class="store-badge">
+                    TOP {{n}}
+                  </div>
+                  <v-img contain src=https://picsum.photos/id/55/200></v-img>
+                  <v-card-title class="text-h5-1 primary--text pb-0"> 
+                    店家名稱 
+                  </v-card-title>
+                  <v-card-text class="pb-0">
+                  <v-divider />
+                  </v-card-text>
+                  <v-card-text>
+                    店家簡介dolor sit amet consectetur, adipisicing elit.
+                  </v-card-text>
+                  <v-card-text class="text-left py-0">
+                      <v-icon small>mdi-account-group</v-icon> <span>1200 位粉絲</span>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn outlined link color="primary" class="store-btn">{{$t('__shop_now')}} <v-icon class="icon-transition">mdi-arrow-right</v-icon></v-btn>
+                  </v-card-actions>
+                </v-card>
+                </v-slide-item>
+              </v-slide-group>
       </v-card>
       <!-- items -->
       <v-card flat rounded="false" class="my-2" elevation="1">
