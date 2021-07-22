@@ -14,17 +14,15 @@ const routes = [
     // }
   },
   {
-    path: "/store-center",
-    name: "StoreCenter",
-    component: () => import("@/views/StoreCenter.vue")
-    // meta: {
-    //   requiresAuth: true
-    // }
-  },
-  {
     path: "/sign-in",
     name: "SignIn",
     component: () => import("@/views/SignIn.vue")
+  },
+  {
+    // :id
+    path: "/store-info",
+    name: "StoreInfo",
+    component: () => import("@/views/StoreInfo.vue")
   }
 ];
 
