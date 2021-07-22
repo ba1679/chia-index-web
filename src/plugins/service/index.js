@@ -38,5 +38,4 @@ export function callService(url, idToken, data = {}) {
     })
 }
 
-import adminAPI from './services/adminAPI'
-export { adminAPI }
+export * as userAPI from './services/userAPI/index.js'
