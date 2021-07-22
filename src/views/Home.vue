@@ -123,7 +123,7 @@
             :key="n"
             class="mr-2" 
           >
-          <v-card link max-width="250" class="ma-1">
+          <v-card link max-width="250" class="ma-1" :to="{name:'StoreInfo'}">
             <v-img contain src=https://picsum.photos/id/3/200></v-img>
             <v-card-title class="text-h5-1 primary--text pb-0"> 
               店家名稱 
