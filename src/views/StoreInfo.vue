@@ -1,13 +1,32 @@
 <template>
   <div class="store-info">
+    <div class="relative">
+      <v-img src="https://lorempixel.com/980/580">
+        <!-- store intro -->
+        <v-container>
+          <v-row justify="center" class="store-intro text-center">
+            <v-col cols="12">
+              <p class="font-weight-bold">
+                歡迎光臨本商店，本店所有商品實物拍攝，質量保證，如需商品諮詢請隨時聯繫我們客服。祝大家在本店購物愉快
+              </p>
+              <p>
+                詳細介紹，大廚精選年菜，過年過節主廚煮給你
+                店選產品，五菜一湯立即上桌 24hr內熱騰騰送你家 Lorem ipsum dolor,
+                sit amet consectetur adipisicing elit. Cum assumenda neque quia
+                voluptatibus, aut iure beatae odio quibusdam eius quae culpa
+                totam nulla ea ipsa magnam ipsum necessitatibus quos vero?
+              </p>
+              <v-btn outlined color="white" class="font-weight-bold">
+                購物去 <v-icon>mdi-cart-arrow-right</v-icon>
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-img>
+    </div>
     <v-container class="text-center">
       <!-- photo & video -->
       <section class="mb-8">
-        <img
-          class="img-fluid"
-          src="https://lorempixel.com/980/580"
-          alt="店家圖片"
-        />
         <iframe
           class="img-fluid"
           width="980"
@@ -22,12 +41,7 @@
       <!-- store infomation -->
 
       <!-- store intro -->
-      <section class="mb-8">
-        <div class="text-center">
-          <h3 class="text-h4 mb-0">感光測試</h3>
-          <p class="text-subtitle-1">不論陰天夜晚，辨識能力極高</p>
-        </div>
-        <v-row dense class="photo-intro" v-for="i in 2" :key="i">
+      <!-- <v-row dense class="photo-intro" v-for="i in 2" :key="i">
           <v-col :cols="isMobile ? 12 : 6" class="photo-intro-img">
             <img
               class="img-fluid"
@@ -43,8 +57,7 @@
               repudiandae consequuntur dicta laborum sequi omnis.
             </p>
           </v-col>
-        </v-row>
-      </section>
+        </v-row> -->
       <!-- intro table -->
       <section class="mb-8">
         <h3 class="text-h4 text-center">
@@ -96,8 +109,44 @@
           </tbody>
         </table>
       </section>
+      <!-- product intro -->
+      <ProductIntro />
+      <!-- Q&A -->
+      <section class="mt-8">
+        <v-row justify="center" align="center">
+          <v-col :cols="isMobile ? 12 : 6">
+            <v-btn block dark elevation="0" color="blue darken-3">
+              <v-icon class="mr-2">mdi-facebook</v-icon>Facebook
+            </v-btn>
+          </v-col>
+        </v-row>
+        <v-row justify="center" class="mt-0">
+          <v-col :cols="isMobile ? 12 : 6">
+            <v-btn block dark elevation="0" color="green">
+              Line
+            </v-btn>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col :cols="isMobile ? 12 : 6">
+            <v-expansion-panels>
+              <v-expansion-panel v-for="(item, i) in 5" :key="i">
+                <v-expansion-panel-header class="font-weight-bold">
+                  Q{{ item }} 保固方法與期限 ?
+                </v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
+          </v-col>
+        </v-row>
+      </section>
       <!-- recommend -->
-      <section>
+      <section class="mt-8">
         <h3 class="text-h4 text-center">
           網紅聯名推薦
         </h3>
@@ -126,42 +175,6 @@
           </div>
         </v-sheet>
       </section>
-      <!-- product intro -->
-      <ProductIntro />
-      <!-- Q&A -->
-      <section class="mt-8">
-        <v-row justify="center">
-          <v-col cols="6">
-            <v-btn block dark elevation="0" color="blue darken-3">
-              <v-icon class="mr-2">mdi-facebook</v-icon>Facebook
-            </v-btn>
-          </v-col>
-        </v-row>
-        <v-row justify="center" class="mt-0">
-          <v-col cols="6">
-            <v-btn block dark elevation="0" color="green">
-              Line
-            </v-btn>
-          </v-col>
-        </v-row>
-        <v-row justify="center">
-          <v-col cols="6">
-            <v-expansion-panels>
-              <v-expansion-panel v-for="(item, i) in 5" :key="i">
-                <v-expansion-panel-header class="font-weight-bold">
-                  Q{{ item }} 保固方法與期限 ?
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
-          </v-col>
-        </v-row>
-      </section>
       <!-- customer service -->
       <section class="mt-8">
         <v-divider />
@@ -169,52 +182,8 @@
           客戶服務
         </h3>
         <v-divider />
-        <v-row
-          justify="center"
-          class="px-5"
-          :class="{ 'flex-column': isMobile }"
-        >
-          <v-col :cols="isMobile ? 12 : 5">
-            <v-list-item two-line class="text-left">
-              <v-list-item-content>
-                <v-list-item-title class="font-weight-bold"
-                  >支付方式</v-list-item-title
-                >
-                <v-list-item-subtitle
-                  >現金、貨到付款、Line pay</v-list-item-subtitle
-                >
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item two-line class="text-left">
-              <v-list-item-content>
-                <v-list-item-title class="font-weight-bold"
-                  >物流方式</v-list-item-title
-                >
-                <v-list-item-subtitle
-                  >到店自取、面交、黑貓宅急便</v-list-item-subtitle
-                >
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item two-line class="text-left">
-              <v-list-item-content>
-                <v-list-item-title class="font-weight-bold"
-                  >自動回覆時間</v-list-item-title
-                >
-                <v-list-item-subtitle
-                  >週一 ~ 週五 9:00-17:00</v-list-item-subtitle
-                >
-              </v-list-item-content>
-            </v-list-item>
-          </v-col>
-          <v-col :cols="isMobile ? 12 : 6">
-            <v-list-item two-line class="text-left">
-              <v-list-item-content>
-                <v-list-item-title class="font-weight-bold"
-                  >聯絡我們</v-list-item-title
-                >
-                <v-list-item-subtitle>店家提供的聯絡方式</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+        <v-row justify="center" class="px-5">
+          <v-col cols="12">
             <v-list-item two-line class="text-left">
               <v-list-item-content>
                 <v-list-item-title class="font-weight-bold"
@@ -269,6 +238,15 @@ export default {
 <style lang="scss" scoped>
 .store-info {
   background-color: #f4f4f4;
+}
+.store-intro {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  @media (min-width: 600px) {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
 }
 @media (min-width: 960px) {
   .photo-intro:nth-child(even) {

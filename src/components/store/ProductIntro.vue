@@ -1,11 +1,8 @@
 <template>
   <div class="product-intro">
-    <h3 class="text-h4 text-center">
-      店家資訊
-    </h3>
     <v-sheet flat class="mt-3 pa-5">
       <v-row dense justify="center">
-        <v-col :cols="isMobile ? 10 : 6">
+        <v-col :cols="isMobile ? 10 : 6" class="relative">
           <v-img src="https://lorempixel.com/450/450"></v-img>
         </v-col>
         <v-col :cols="isMobile ? 10 : 6" class="text-left d-flex flex-column">
@@ -13,48 +10,23 @@
           <v-row dense>
             <v-col class="d-flex justify-center align-center">
               <v-list>
-                <v-list-item class="pl-0">
+                 <v-list-item class="pl-0" v-for="item in storeData" :key="item.icon">
                   <v-list-item-icon>
-                    <v-icon color="black">mdi-storefront-outline</v-icon>
+                    <v-icon color="black">{{item.icon}}</v-icon>
                   </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title
-                      >總商品數:
+                      >{{item.title}}:
                       <span class="primary--text font-weight-bold"
-                        >155</span
+                        >{{item.content}}</span
                       ></v-list-item-title
                     >
                   </v-list-item-content>
                 </v-list-item>
-                <v-list-item class="pl-0">
-                  <v-list-item-icon>
-                    <v-icon color="black">mdi-account-multiple-outline</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title
-                      >粉絲人數:
-                      <span class="primary--text font-weight-bold"
-                        >155</span
-                      ></v-list-item-title
-                    >
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item class="pl-0">
-                  <v-list-item-icon>
-                    <v-icon color="black">mdi-account-check</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title
-                      >加入時間:
-                      <span class="primary--text font-weight-bold"
-                        >2021/07/22</span
-                      ></v-list-item-title
-                    >
-                  </v-list-item-content>
-                </v-list-item>
+            
               </v-list>
             </v-col>
-            <v-col class="d-flex align-center justify-center">
+            <v-col class="d-flex justify-center">
               <qrcode-vue
                 :value="storeQrcodeLink"
                 size="120"
@@ -63,18 +35,21 @@
             </v-col>
           </v-row>
           <div>
-            <v-btn outlined block color="primary"
-              ><v-icon left small>mdi-plus</v-icon>關注店家</v-btn
+            <v-btn block color="primary"
+              ><v-icon left>mdi-plus</v-icon>關注店家</v-btn
             >
           </div>
         </v-col>
       </v-row>
       <v-row>
-        <v-col :cols="isMobile ? 6 : 3" v-for="i in 4" :key="i">
-          <v-card link class="ma-1 text-center" outlined>
+        <v-col :cols="isMobile ? 12 : 4" v-for="i in items" :key="i.name">
+          <v-card link class="ma-1 text-center" flat>
             <v-img contain src=https://picsum.photos/id/168/200></v-img>
+            <div class="item-tag">
+              {{i.category}}
+            </div>
             <v-card-title class="pb-0 justify-center"> 
-              <p>商品名稱</p> 
+              <p>{{i.name}}</p> 
             </v-card-title>
             <v-card-text class="pb-0">
               <p class="text-h6 primary--text mb-0">$55</p>
@@ -109,8 +84,88 @@ export default {
   },
   data() {
     return {
-      storeQrcodeLink: "https://www.chia-market.com/"
+      storeQrcodeLink: "https://www.chia-market.com/",
+      items:[
+        {
+          name: '商品一',
+          category: '熱賣商品'
+        },
+        {
+          name: '商品二',
+          category: '店長推薦'
+        },
+        {
+          name: '商品三',
+          category: '新品推薦'
+        }
+      ],
+      storeData:[
+        {
+          title: '總商品數',
+          content: '123',
+          icon: 'mdi-storefront-outline'
+        }
+        ,
+        {
+          title: '粉絲人數',
+          content: '123',
+          icon: 'mdi-account-multiple-outline'
+        }
+        ,
+        {
+          title: '加入時間',
+          content: '2021/07/22',
+          icon: 'mdi-account-check'
+        }
+        ,
+        {
+          title: '地點',
+          content: '台北市中山區',
+          icon: 'mdi-map-marker'
+        },
+        {
+          title: '支付方式',
+          content: '現金、貨到付款、Line pay',
+          icon: 'mdi-cash-usd-outline'
+        },
+        {
+          title: '物流方式',
+          content: '黑貓、到店自取',
+          icon: 'mdi-truck-fast'
+        },
+        {
+          title: '自動回覆時間',
+          content: '週一至週五 9:00~17:00',
+          icon: 'mdi-message-text-clock'
+        },
+        {
+          title: '聯絡我們',
+          content: '(04)22557799',
+          icon: 'mdi-phone-forward'
+        }
+      ]
     };
   }
 };
 </script>
+<style lang="scss" scoped>
+.item-tag{
+  background-color: orange;
+  color: #fff;
+  padding: 5px 10px;
+  position: absolute;
+  top: -4px;
+  left: -5px;
+  border-top-right-radius:3px;
+  border-bottom-right-radius:3px;
+  &::before{
+    content: '';
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    border-bottom:5px solid currentColor;
+    border-right:5px solid transparent;
+  }
+}
+</style>
