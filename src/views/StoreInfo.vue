@@ -51,39 +51,49 @@
           市場極致表現
         </h3>
         <table class="mx-auto compare-table text-left">
-          <tr>
-            <th></th>
-            <th>本產品</th>
-            <th>A公司</th>
-            <th>B公司</th>
-          </tr>
-          <tr>
-            <th>雙鏡頭對焦</th>
-            <td class="our-style d-flex justify-space-between">
-              快速對焦 不晃不模糊
-              <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
-            </td>
-            <td>比較項目描述 比較項目</td>
-            <td>比較項目描述 比較項目</td>
-          </tr>
-          <tr>
-            <th>NFC感應支付</th>
-            <td class="our-style d-flex justify-space-between">
-              3s 以內
-              <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
-            </td>
-            <td>15 - 30 s</td>
-            <td>15 - 30 s</td>
-          </tr>
-          <tr>
-            <th>藍牙感測定位</th>
-            <td class="our-style d-flex justify-space-between">
-              16cm
-              <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
-            </td>
-            <td>20m 以上</td>
-            <td>20m 以上</td>
-          </tr>
+          <thead>
+            <tr>
+              <th></th>
+              <th>本產品</th>
+              <th>A公司</th>
+              <th>B公司</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>雙鏡頭對焦</th>
+              <td class="our-style">
+                <span class="d-flex justify-space-between">
+                  快速對焦 不晃不模糊
+                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                </span>
+              </td>
+              <td>比較項目描述 比較項目</td>
+              <td>比較項目描述 比較項目</td>
+            </tr>
+            <tr>
+              <th>NFC感應支付</th>
+              <td class="our-style">
+                <span class="d-flex justify-space-between">
+                  3s 以內
+                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                </span>
+              </td>
+              <td>15 - 30 s</td>
+              <td>15 - 30 s</td>
+            </tr>
+            <tr>
+              <th>藍牙感測定位</th>
+              <td class="our-style">
+                <span class="d-flex justify-space-between">
+                  16cm
+                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                </span>
+              </td>
+              <td>20m 以上</td>
+              <td>20m 以上</td>
+            </tr>
+          </tbody>
         </table>
       </section>
       <!-- recommend -->
@@ -275,6 +285,12 @@ export default {
 .compare-table {
   margin-top: 10px;
   border-collapse: collapse;
+  @media (max-width: 600px) {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
   th,
   td {
     border: 1px solid #000;
