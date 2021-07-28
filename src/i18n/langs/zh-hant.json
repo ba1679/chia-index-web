@@ -20,6 +20,8 @@
   "__good_items": "每日新發現",
   "__shop_now": "購物去",
   "__store": "商店",
+  "__follow": "關注店家",
+  "__shop_immediately": "立即購物",
 
   "__functions": "產品功能",
   "__services": "功能服務",
@@ -31,6 +33,14 @@
   "__chia_copyright": "chia 版權所有",
   "__terms_of_services": "服務條款",
   "__privacy_policy": "隱私條款",
+
+
+  "__store_info_kol_recommend":"網紅聯名推薦",
+  "__store_info_kol_recommend_for_you":"誠心推薦",
+
+  "__store_info_customer_service": "客戶服務",
+  "__store_info_customer_service_law": "條款與細則",
+  "__store_info_customer_service_return": "退換貨方式",
 
   "__register": "註冊",
   "__sign_in": "登入",

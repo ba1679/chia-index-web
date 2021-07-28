@@ -20,6 +20,15 @@
   "__good_items": "Good Items",
   "__shop_now": "Shop now",
   "__store": "Store",
+  "__follow": "Follow",
+  "__shop_immediately": "Shop now",
+
+  "__store_info_kol_recommend":"KOL recommend",
+  "__store_info_kol_recommend_for_you":"Recommend for you",
+  "__store_info_customer_service": "Customer service",
+  "__store_info_customer_service_law": "Terms & Conditions",
+  "__store_info_customer_service_return": "Returns & Refunds",
+
   
   "__functions": "Functions",
   "__services": "Services",
