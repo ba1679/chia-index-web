@@ -1,9 +1,9 @@
 <template>
   <div class="product-intro">
-    <v-sheet flat class="mt-3 pa-5">
+    <v-sheet flat class="mt-3" :class="{'pa-5': !isMobile}">
       <v-row dense justify="center">
         <v-col :cols="isMobile ? 10 : 6" class="relative">
-          <v-img src="https://lorempixel.com/450/450"></v-img>
+          <v-img src="https://lorempixel.com/800/800"></v-img>
         </v-col>
         <v-col :cols="isMobile ? 10 : 6" class="text-left d-flex flex-column">
           <h3 class="text-h5 font-weight-bold">店家名稱</h3>
@@ -44,7 +44,7 @@
       <v-row>
         <v-col :cols="isMobile ? 12 : 4" v-for="i in items" :key="i.name">
           <v-card link class="ma-1 text-center" flat>
-            <v-img contain src=https://picsum.photos/id/168/200></v-img>
+            <v-img contain src=https://picsum.photos/id/77/300></v-img>
             <div class="item-tag">
               {{i.category}}
             </div>

@@ -1,15 +1,16 @@
 <template>
   <div class="store-info">
     <div class="relative">
-      <v-img src="https://lorempixel.com/980/580">
+      <v-img src="https://lorempixel.com/1200/900">
         <!-- store intro -->
         <v-container>
           <v-row justify="center" class="store-intro text-center">
             <v-col cols="12">
+              <h1 class="text-md-h3">店家名稱</h1>
               <p class="font-weight-bold">
                 歡迎光臨本商店，本店所有商品實物拍攝，質量保證，如需商品諮詢請隨時聯繫我們客服。祝大家在本店購物愉快
               </p>
-              <p>
+              <p class="px-5">
                 詳細介紹，大廚精選年菜，過年過節主廚煮給你
                 店選產品，五菜一湯立即上桌 24hr內熱騰騰送你家 Lorem ipsum dolor,
                 sit amet consectetur adipisicing elit. Cum assumenda neque quia
@@ -58,57 +59,7 @@
             </p>
           </v-col>
         </v-row> -->
-      <!-- intro table -->
-      <section class="mb-8">
-        <h3 class="text-h4 text-center">
-          市場極致表現
-        </h3>
-        <table class="mx-auto compare-table text-left">
-          <thead>
-            <tr>
-              <th></th>
-              <th>本產品</th>
-              <th>A公司</th>
-              <th>B公司</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>雙鏡頭對焦</th>
-              <td class="our-style">
-                <span class="d-flex justify-space-between">
-                  快速對焦 不晃不模糊
-                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
-                </span>
-              </td>
-              <td>比較項目描述 比較項目</td>
-              <td>比較項目描述 比較項目</td>
-            </tr>
-            <tr>
-              <th>NFC感應支付</th>
-              <td class="our-style">
-                <span class="d-flex justify-space-between">
-                  3s 以內
-                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
-                </span>
-              </td>
-              <td>15 - 30 s</td>
-              <td>15 - 30 s</td>
-            </tr>
-            <tr>
-              <th>藍牙感測定位</th>
-              <td class="our-style">
-                <span class="d-flex justify-space-between">
-                  16cm
-                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
-                </span>
-              </td>
-              <td>20m 以上</td>
-              <td>20m 以上</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+
       <!-- product intro -->
       <ProductIntro />
       <!-- Q&A -->
@@ -174,6 +125,57 @@
             <p class="text-right">某知名藝人 誠心推薦</p>
           </div>
         </v-sheet>
+      </section>
+      <!-- intro table -->
+      <section class="mb-8">
+        <h3 class="text-h4 text-center">
+          市場極致表現
+        </h3>
+        <table class="mx-auto compare-table text-left">
+          <thead>
+            <tr>
+              <th></th>
+              <th>本產品</th>
+              <th>A公司</th>
+              <th>B公司</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>雙鏡頭對焦</th>
+              <td class="our-style">
+                <span class="d-flex justify-space-between">
+                  快速對焦 不晃不模糊
+                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                </span>
+              </td>
+              <td>比較項目描述 比較項目</td>
+              <td>比較項目描述 比較項目</td>
+            </tr>
+            <tr>
+              <th>NFC感應支付</th>
+              <td class="our-style">
+                <span class="d-flex justify-space-between">
+                  3s 以內
+                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                </span>
+              </td>
+              <td>15 - 30 s</td>
+              <td>15 - 30 s</td>
+            </tr>
+            <tr>
+              <th>藍牙感測定位</th>
+              <td class="our-style">
+                <span class="d-flex justify-space-between">
+                  16cm
+                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                </span>
+              </td>
+              <td>20m 以上</td>
+              <td>20m 以上</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
       <!-- customer service -->
       <section class="mt-8">
