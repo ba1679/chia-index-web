@@ -4,21 +4,14 @@
       <v-img src="https://lorempixel.com/1200/900">
         <!-- store intro -->
         <v-container>
-          <v-row justify="center" class="store-intro text-center">
-            <v-col cols="12">
-              <h1 class="text-md-h3">店家名稱</h1>
+          <v-row justify="center" class="text-center">
+            <v-col class="store-intro" cols="12">
+              <h1 class="text-md-h3">零售店家名稱</h1>
               <p class="font-weight-bold">
                 歡迎光臨本商店，本店所有商品實物拍攝，質量保證，如需商品諮詢請隨時聯繫我們客服。祝大家在本店購物愉快
               </p>
-              <p class="px-5">
-                詳細介紹，大廚精選年菜，過年過節主廚煮給你
-                店選產品，五菜一湯立即上桌 24hr內熱騰騰送你家 Lorem ipsum dolor,
-                sit amet consectetur adipisicing elit. Cum assumenda neque quia
-                voluptatibus, aut iure beatae odio quibusdam eius quae culpa
-                totam nulla ea ipsa magnam ipsum necessitatibus quos vero?
-              </p>
               <v-btn outlined color="white" class="font-weight-bold">
-                購物去 <v-icon>mdi-cart-arrow-right</v-icon>
+                {{ $t("__shop_now") }} <v-icon>mdi-cart-arrow-right</v-icon>
               </v-btn>
             </v-col>
           </v-row>
@@ -40,26 +33,6 @@
         ></iframe>
       </section>
       <!-- store infomation -->
-
-      <!-- store intro -->
-      <!-- <v-row dense class="photo-intro" v-for="i in 2" :key="i">
-          <v-col :cols="isMobile ? 12 : 6" class="photo-intro-img">
-            <img
-              class="img-fluid"
-              src="https://lorempixel.com/460/307"
-              alt="介紹圖片"
-            />
-          </v-col>
-          <v-col :cols="isMobile ? 12 : 6" class="d-flex align-center">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-              incidunt enim numquam expedita sapiente, rerum dicta aliquam
-              quasi. Illum velit obcaecati modi veritatis voluptatibus
-              repudiandae consequuntur dicta laborum sequi omnis.
-            </p>
-          </v-col>
-        </v-row> -->
-
       <!-- product intro -->
       <ProductIntro />
       <!-- Q&A -->
@@ -73,8 +46,8 @@
         </v-row>
         <v-row justify="center" class="mt-0">
           <v-col :cols="isMobile ? 12 : 6">
-            <v-btn block dark elevation="0" color="green">
-              Line
+            <v-btn block dark elevation="0" color="pink">
+              <v-icon class="mr-2">mdi-instagram</v-icon>Instagram
             </v-btn>
           </v-col>
         </v-row>
@@ -99,7 +72,7 @@
       <!-- recommend -->
       <section class="mt-8">
         <h3 class="text-h4 text-center">
-          網紅聯名推薦
+          {{ $t("__store_info_kol_recommend") }}
         </h3>
         <v-sheet
           outlined
@@ -122,7 +95,9 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
               doloremque in adipisci consequuntur perferendis quos.
             </p>
-            <p class="text-right">某知名藝人 誠心推薦</p>
+            <p class="text-right">
+              某知名藝人 {{ $t("__store_info_kol_recommend_for_you") }}
+            </p>
           </div>
         </v-sheet>
       </section>
@@ -177,20 +152,31 @@
           </tbody>
         </table>
       </section>
+      <!-- locatioin map -->
+      <section class="mb-8">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5849204944307!2d121.51372886382393!3d25.048156731639953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1627461025178!5m2!1szh-TW!2stw"
+          width="1200"
+          height="400"
+          style="border:0;"
+          allowfullscreen="true"
+          loading="lazy"
+        ></iframe>
+      </section>
       <!-- customer service -->
       <section class="mt-8">
         <v-divider />
         <h3 class="text-h4 text-center py-3">
-          客戶服務
+          {{ $t("__store_info_customer_service") }}
         </h3>
         <v-divider />
         <v-row justify="center" class="px-5">
           <v-col cols="12">
             <v-list-item two-line class="text-left">
               <v-list-item-content>
-                <v-list-item-title class="font-weight-bold"
-                  >條款與細則</v-list-item-title
-                >
+                <v-list-item-title class="font-weight-bold">{{
+                  $t("__store_info_customer_service_law")
+                }}</v-list-item-title>
                 <v-list-item-content>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Nobis assumenda aliquam sunt vel cupiditate! Unde id,
@@ -201,9 +187,9 @@
             </v-list-item>
             <v-list-item two-line class="text-left">
               <v-list-item-content>
-                <v-list-item-title class="font-weight-bold"
-                  >退換貨方式</v-list-item-title
-                >
+                <v-list-item-title class="font-weight-bold">{{
+                  $t("__store_info_customer_service_return")
+                }}</v-list-item-title>
                 <v-list-item-content>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Nobis assumenda aliquam sunt vel cupiditate! Unde id,
@@ -246,15 +232,8 @@ export default {
   color: #fff;
   @media (min-width: 600px) {
     position: absolute;
-    bottom: 10px;
+    bottom: 50%;
     right: 10px;
-  }
-}
-@media (min-width: 960px) {
-  .photo-intro:nth-child(even) {
-    .photo-intro-img {
-      order: 1;
-    }
   }
 }
 @media (max-width: 600px) {

@@ -7,10 +7,10 @@
         </v-col>
         <v-col :cols="isMobile ? 10 : 6" class="text-left d-flex flex-column">
           <h3 class="text-h5 font-weight-bold">店家名稱</h3>
-          <v-row dense>
-            <v-col class="d-flex justify-center align-center">
-              <v-list>
-                 <v-list-item class="pl-0" v-for="item in storeData" :key="item.icon">
+          <v-row dense class="mt-5">
+            <v-col class="d-flex justify-center">
+              <v-list class="pt-0">
+                <v-list-item class="pl-0" v-for="item in storeData" :key="item.icon">
                   <v-list-item-icon>
                     <v-icon color="black">{{item.icon}}</v-icon>
                   </v-list-item-icon>
@@ -26,19 +26,27 @@
             
               </v-list>
             </v-col>
-            <v-col class="d-flex justify-center">
+            <v-col class="d-flex align-center flex-column">
               <qrcode-vue
                 :value="storeQrcodeLink"
                 size="120"
                 renderAs="canvas"
               />
+              <div class="mt-5">
+                <v-btn large block color="primary"
+                  ><v-icon left>mdi-plus</v-icon>{{$t('__follow')}}</v-btn
+                >
+              </div>
             </v-col>
           </v-row>
-          <div>
-            <v-btn block color="primary"
-              ><v-icon left>mdi-plus</v-icon>關注店家</v-btn
-            >
-          </div>
+        
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col cols="12" class="pa-5">
+          <p>店家詳細介紹: Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique natus quaerat laudantium ratione quibusdam, officiis officia fugiat, veritatis nam voluptatem non sunt id nostrum. Modi, nobis vel. Voluptatem, saepe odio!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora voluptates eveniet itaque aperiam. Voluptates voluptatum laborum incidunt praesentium eaque architecto voluptate ducimus obcaecati nemo deleniti quos inventore, illum eligendi reiciendis?
+          </p>
         </v-col>
       </v-row>
       <v-row>
@@ -59,7 +67,7 @@
             </v-card-text>
             <v-card-actions>
               <v-btn color="primary" dark block>
-                立即購物
+                {{$t('__shop_immediately')}}
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -120,7 +128,7 @@ export default {
         ,
         {
           title: '地點',
-          content: '台北市中山區',
+          content: '台北市, 中正區',
           icon: 'mdi-map-marker'
         },
         {
@@ -137,11 +145,6 @@ export default {
           title: '自動回覆時間',
           content: '週一至週五 9:00~17:00',
           icon: 'mdi-message-text-clock'
-        },
-        {
-          title: '聯絡我們',
-          content: '(04)22557799',
-          icon: 'mdi-phone-forward'
         }
       ]
     };

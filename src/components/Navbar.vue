@@ -78,7 +78,10 @@
       <v-row dense :class="{ 'flex-column': isMobile }">
         <v-col md="1" sm="6">
           <v-toolbar-title class="headline mr-3">
-            <router-link class="d-flex justify-center" :to="{ name: 'Home' }">
+            <router-link
+              class="d-flex justify-center"
+              :to="{ name: 'SalesHome' }"
+            >
               <v-img
                 alt="Logo"
                 class="shrink mr-2"
