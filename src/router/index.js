@@ -7,11 +7,24 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: () => import("@/views/Home.vue")
-    // meta: {
-    //   requiresAuth: true
-    // }
+    component: () => import("@/views/Home.vue"),
+    children: [
+      {
+        path: "",
+        name: "SalesHome",
+        component: () => import("@/views/Categories/SalesHome.vue")
+      },
+      {
+        path: "/food-home",
+        name: "FoodHome",
+        component: () => import("@/views/Categories/FoodHome.vue")
+      },
+      {
+        path: "service-home",
+        name: "ServiceHome",
+        component: () => import("@/views/Categories/ServiceHome.vue")
+      }
+    ]
   },
   {
     path: "/sign-in",
