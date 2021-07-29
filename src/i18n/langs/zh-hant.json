@@ -19,6 +19,7 @@
   "__hot_store": "人氣店家",
   "__good_items": "每日新發現",
   "__shop_now": "購物去",
+  "__food_book_now": "立即預約",
   "__store": "商店",
   "__follow": "關注店家",
   "__shop_immediately": "立即購物",
@@ -36,11 +37,17 @@
 
 
   "__store_info_kol_recommend":"網紅聯名推薦",
+  "__store_info_people_recommend":"饕客熱烈好評",
   "__store_info_kol_recommend_for_you":"誠心推薦",
 
   "__store_info_customer_service": "客戶服務",
   "__store_info_customer_service_law": "條款與細則",
   "__store_info_customer_service_return": "退換貨方式",
+
+  "__store_info_book_service": "線上預訂",
+  "__store_info_open_time": "營業時間",
+  "__store_info_hold_reservation": "預定保留辦法",
+  "__store_info_cancel_reservation": "預定取消辦法",
 
   "__register": "註冊",
   "__sign_in": "登入",
@@ -132,18 +139,6 @@
   "__delete_admin_privilege": "刪除管理員權限",
   "__confirm_delete_privilege": "確定刪除管理員權限?",
 
-  "__nonactivated": "尚未開通",
-  "__basic": "普通",
-  "__bronze": "青銅",
-  "__silver": "白銀",
-  "__gold": "黃金",
-  "__diamond": "鑽石",
-  "__non-profit": "非營利組織",
-
-  "__master": "所有權限",
-  "__developer": "開發者",
-  "__admin-management": "管理員管理者",
-  "__user-management": "使用者管理者",
 
   "__all": "全部",
   "__paid": "尚未付款",
