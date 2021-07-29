@@ -27,6 +27,7 @@
       <!-- photo & video -->
       <section class="mb-8">
         <iframe
+          class="img-fluid"
           width="980"
           height="420"
           src="https://www.youtube.com/embed/XCoDrGC3VQA"
@@ -39,54 +40,52 @@
       <!-- items infomation -->
       <v-container>
         <v-row>
-          <v-col :cols="isMobile ? 6 : 4">
+          <v-col :cols="isMobile ? 12 : 4">
             <v-card flat link class="relative item-card-1">
               <v-img
                 class="item-bg"
                 src="https://images.unsplash.com/photo-1519333796630-4b7d19ad1bb3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               ></v-img>
               <div class="overlay-bg d-flex flex-column justify-center">
-                <h3 class="text-h4">極致拿鐵</h3>
-                <h4 class="text-h5">$80</h4>
+                <h3 class="text-sm-h4">極致拿鐵</h3>
+                <h4 class="text-sm-h5">$80</h4>
               </div>
             </v-card>
           </v-col>
-          <v-col :cols="isMobile ? 6 : 4">
+          <v-col :cols="isMobile ? 12 : 4">
             <v-card flat link class="relative item-card-2">
               <v-img
                 class="item-bg"
                 src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               ></v-img>
               <div class="overlay-bg d-flex flex-column justify-center">
-                <h3 class="text-h4">驚動美式</h3>
-                <h4 class="text-h5">$120</h4>
+                <h3 class="text-sm-h4">驚動美式</h3>
+                <h4 class="text-sm-h5">$120</h4>
               </div>
             </v-card>
           </v-col>
-          <v-col :cols="isMobile ? 6 : 4">
+          <v-col :cols="isMobile ? 12 : 4">
             <v-card flat link class="relative item-card-2">
               <v-img
                 src="https://images.unsplash.com/photo-1592663527144-3afb8d150556?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
               ></v-img>
             </v-card>
           </v-col>
-        </v-row>
-        <v-row>
-          <v-col :cols="isMobile ? 6 : 4">
+          <v-col :cols="isMobile ? 12 : 4">
             <v-card flat link class="relative item-card-2">
               <v-img
                 src="https://images.unsplash.com/photo-1600326145552-327f74b9c189?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               ></v-img>
             </v-card>
           </v-col>
-          <v-col :cols="isMobile ? 6 : 4">
+          <v-col :cols="isMobile ? 12 : 4">
             <v-card flat link class="relative item-card-2">
               <v-img
                 src="https://images.unsplash.com/photo-1569929232526-d9c6578e1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
               ></v-img>
             </v-card>
           </v-col>
-          <v-col :cols="isMobile ? 6 : 4">
+          <v-col :cols="isMobile ? 12 : 4">
             <v-card flat link class="relative item-card-2">
               <v-img
                 src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -121,7 +120,7 @@
           {{ $t("__store_info_book_service") }}
         </h3>
         <v-divider />
-        <v-row justify="center" class="px-10">
+        <v-row justify="center" :class="{ 'px-10': !isMobile }">
           <v-col cols="12">
             <v-list-item two-line class="text-left">
               <v-list-item-content>
@@ -180,8 +179,8 @@
           v-for="i in 3"
           :key="i"
         >
-          <v-row align="center">
-            <v-col :cols="isMobile ? 12 : 4">
+          <v-row align="center" :class="{ 'pa-3': isMobile }">
+            <v-col :cols="isMobile ? 12 : 4" :class="recommendMobileClass">
               <v-img
                 class="rounded-circle ma-3"
                 src="https://lorempixel.com/150/150"
@@ -206,6 +205,7 @@
     </v-container>
     <!-- locatioin map -->
     <iframe
+      class="img-fluid"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5849204944307!2d121.51372886382393!3d25.048156731639953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1627461025178!5m2!1szh-TW!2stw"
       width="1400"
       height="400"
@@ -230,7 +230,23 @@ export default {
     })
   },
   data() {
-    return {};
+    return {
+      recommendMobileClass: {
+        "d-flex": this.isMobile,
+        "justify-center": this.isMobile
+      }
+    };
+  },
+  watch: {
+    isMobile: {
+      immediate: true,
+      handler(val) {
+        if (val) {
+          this.recommendMobileClass["d-flex"] = val;
+          this.recommendMobileClass["justify-center"] = val;
+        }
+      }
+    }
   }
 };
 </script>
@@ -238,32 +254,39 @@ export default {
 .store-info {
   background-color: #f4f4f4;
 }
-.item-bg {
-  transform: scale(1);
-  transition: all 0.3s;
-}
 .item-card-1,
 .item-card-2 {
   overflow: hidden;
 }
-.item-card-1:hover,
-.item-card-2:hover {
+@media (min-width: 1024px) {
   .item-bg {
-    transform: scale(1.3);
+    transform: scale(1);
+    transition: all 0.3s;
   }
-  .overlay-bg {
-    opacity: 1;
+  .item-card-1:hover,
+  .item-card-2:hover {
+    .item-bg {
+      transform: scale(1.3);
+    }
+    .overlay-bg {
+      opacity: 1;
+    }
   }
 }
 .overlay-bg {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  opacity: 0;
-  transition: all 0.3s;
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+  @media (min-width: 1024px) {
+    opacity: 0;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
 }
 .store-intro {
   background-color: rgba(0, 0, 0, 0.3);

@@ -2,15 +2,14 @@
   <!-- store intro -->
   <v-row justify="center" class="store-info-card text-center">
     <v-col :cols="isMobile ? 12 : 5" class="d-flex flex-column align-center ">
-      <v-card flat color="transparent" class="white--text">
+      <v-card flat color="transparent">
         <v-img
-          width="350"
-          height="350"
-          class="rounded-circle"
+          :max-width="isMobile ? 250 : 350"
+          class="rounded-circle mt-5"
           src="https://upload.wikimedia.org/wikipedia/zh/thumb/b/bf/Starbucks_Coffee.svg/1200px-Starbucks_Coffee.svg.png"
         ></v-img>
-        <v-card-text>
-          <h3 class="text-h5 font-weight-bold mt-3">OO咖啡館</h3>
+        <v-card-text class="white--text">
+          <h3 class="text-h5 font-weight-bold  mt-3">OO咖啡館</h3>
         </v-card-text>
         <v-card-actions class="justify-center">
           <v-btn icon>
@@ -48,7 +47,10 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col class="d-flex align-center flex-column">
+        <v-col
+          class="d-flex align-center flex-column"
+          :class="{ 'mb-3': isMobile }"
+        >
           <qrcode-vue :value="storeQrcodeLink" size="120" renderAs="canvas" />
           <div class="mt-5">
             <v-btn large block color="primary"
