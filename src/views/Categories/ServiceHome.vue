@@ -273,10 +273,10 @@ export default {
 }
 
 .category-tab {
-  border-radius: 4px 0 0 4px;
+  border-radius: 0 0 0 4px;
   border-left: 1px solid transparent;
   padding-left: 0;
-  background-color: #0071bc;
+  background-color: #7FC2F8;
   color: #fff;
   li {
     padding: 10.5px;
@@ -286,48 +286,48 @@ export default {
 }
 .category-tab-1:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #7FC2F8;
+  border-color: #7FC2F8;
   .category-list-1 {
     display: block;
   }
 }
 .category-tab-2:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #7FC2F8;
+  border-color: #7FC2F8;
   .category-list-2 {
     display: block;
   }
 }
 .category-tab-3:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #7FC2F8;
+  border-color: #7FC2F8;
   .category-list-3 {
     display: block;
   }
 }
 .category-tab-4:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #7FC2F8;
+  border-color: #7FC2F8;
   .category-list-4 {
     display: block;
   }
 }
 .category-tab-5:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #7FC2F8;
+  border-color: #7FC2F8;
   .category-list-5 {
     display: block;
   }
 }
 .category-tab-6:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #7FC2F8;
+  border-color: #7FC2F8;
   .category-list-6 {
     display: block;
   }
@@ -336,7 +336,7 @@ export default {
   color: #000;
   display: none;
   position: absolute;
-  border: 2px solid #0071bc;
+  border: 2px solid #7FC2F8;
   border-radius: 0 4px 4px 0;
   left: 100%;
   top: 0;

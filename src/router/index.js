@@ -33,9 +33,15 @@ const routes = [
   },
   {
     // :id
-    path: "/store-info",
-    name: "StoreInfo",
-    component: () => import("@/views/StoreInfo.vue")
+    path: "/sales-store-info",
+    name: "SalesStoreInfo",
+    component: () => import("@/views/StoreInfo/SalesStoreInfo.vue")
+  },
+  {
+    // :id
+    path: "/food-store-info",
+    name: "FoodStoreInfo",
+    component: () => import("@/views/StoreInfo/FoodStoreInfo.vue")
   },
   {
     path: "*",

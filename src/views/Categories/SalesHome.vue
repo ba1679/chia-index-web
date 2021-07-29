@@ -1,13 +1,13 @@
 <template>
   <div>
-     <!-- ad -->
+    <!-- ad -->
       <v-card flat rounded="false" class="mb-2">
         <v-card-text class="pt-0">
           <v-row align="start" dense>
             <v-col md="12" lg="8" class="pt-0">
               <v-row no-gutters>
                 <v-col lg="3" class="hidden-md-and-down">
-                   <ul class="category-tab relative">
+                  <ul class="category-tab relative">
                     <li class="category-tab-1">
                       零售分類1 
                       <v-icon right color="white">mdi-arrow-right</v-icon>
@@ -122,7 +122,7 @@
             :key="n"
             class="mr-2" 
           >
-          <v-card link max-width="250" class="ma-1" :to="{name:'StoreInfo'}">
+          <v-card link max-width="250" class="ma-1" :to="{name:'SalesStoreInfo'}">
             <v-img contain src=https://picsum.photos/id/3/200></v-img>
             <v-card-title class="text-h5-1 primary--text pb-0"> 
               店家名稱 
@@ -273,10 +273,10 @@ export default {
 }
 
 .category-tab {
-  border-radius: 4px 0 0 4px;
+  border-radius: 0 0 0 4px;
   border-left: 1px solid transparent;
   padding-left: 0;
-  background-color: #0071bc;
+  background-color: #F37EA5;
   color: #fff;
   li {
     padding: 10.5px;
@@ -286,48 +286,48 @@ export default {
 }
 .category-tab-1:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #F37EA5;
+  border-color: #F37EA5;
   .category-list-1 {
     display: block;
   }
 }
 .category-tab-2:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #F37EA5;
+  border-color: #F37EA5;
   .category-list-2 {
     display: block;
   }
 }
 .category-tab-3:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #F37EA5;
+  border-color: #F37EA5;
   .category-list-3 {
     display: block;
   }
 }
 .category-tab-4:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #F37EA5;
+  border-color: #F37EA5;
   .category-list-4 {
     display: block;
   }
 }
 .category-tab-5:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #F37EA5;
+  border-color: #F37EA5;
   .category-list-5 {
     display: block;
   }
 }
 .category-tab-6:hover {
   background-color: #fff;
-  color: #0071bc;
-  border-color: #0071bc;
+  color: #F37EA5;
+  border-color: #F37EA5;
   .category-list-6 {
     display: block;
   }
@@ -336,7 +336,7 @@ export default {
   color: #000;
   display: none;
   position: absolute;
-  border: 2px solid #0071bc;
+  border: 2px solid #F37EA5;
   border-radius: 0 4px 4px 0;
   left: 100%;
   top: 0;
