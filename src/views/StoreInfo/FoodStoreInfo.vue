@@ -101,7 +101,12 @@
         src="https://images.unsplash.com/photo-1504113888839-1c8eb50233d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=715&q=80"
         class="relative"
       >
-        <StoreIntro />
+        <StoreIntro
+          :storeName="'oo咖啡館'"
+          :storePhoto="
+            'https://upload.wikimedia.org/wikipedia/zh/thumb/b/bf/Starbucks_Coffee.svg/1200px-Starbucks_Coffee.svg.png'
+          "
+        />
       </v-img>
     </section>
     <v-container>
@@ -217,7 +222,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import StoreIntro from "@/components/food/StoreIntro";
+import StoreIntro from "@/components/StoreIntro";
 
 export default {
   name: "StoreInfo",

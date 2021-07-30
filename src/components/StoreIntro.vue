@@ -6,10 +6,10 @@
         <v-img
           :max-width="isMobile ? 250 : 350"
           class="rounded-circle mt-5"
-          src="https://upload.wikimedia.org/wikipedia/zh/thumb/b/bf/Starbucks_Coffee.svg/1200px-Starbucks_Coffee.svg.png"
+          :src="storePhoto"
         ></v-img>
         <v-card-text class="white--text">
-          <h3 class="text-h5 font-weight-bold  mt-3">OO咖啡館</h3>
+          <h3 class="text-h5 font-weight-bold  mt-3">{{ storeName }}</h3>
         </v-card-text>
         <v-card-actions class="justify-center">
           <v-btn icon>
@@ -75,6 +75,14 @@ export default {
     ...mapGetters({
       isMobile: "isMobile"
     })
+  },
+  props: {
+    storeName: {
+      type: String
+    },
+    storePhoto: {
+      type: String
+    }
   },
   data() {
     return {
