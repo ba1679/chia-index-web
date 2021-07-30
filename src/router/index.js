@@ -44,6 +44,12 @@ const routes = [
     component: () => import("@/views/StoreInfo/FoodStoreInfo.vue")
   },
   {
+    // :id
+    path: "/service-store-info",
+    name: "ServiceStoreInfo",
+    component: () => import("@/views/StoreInfo/ServiceStoreInfo.vue")
+  },
+  {
     path: "*",
     redirect: "/"
   }

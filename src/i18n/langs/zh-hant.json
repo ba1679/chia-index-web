@@ -49,6 +49,14 @@
   "__store_info_hold_reservation": "預定保留辦法",
   "__store_info_cancel_reservation": "預定取消辦法",
 
+  "__service_store_book_notice":"預約注意事項",
+  "__service_store_book_available":"可預約時間",
+  "__service_store_book_cancel_method":"取消預約方法",
+  "__service_store_book_other_notice":"其他注意事項",
+  "__service__store_info_people_recommend":"網友熱烈好評",
+  "__service__store_info_go_book":"前往預約",
+  "__service__store_info_more_service":"查看更多",
+
   "__register": "註冊",
   "__sign_in": "登入",
   "__email_address": "電子信箱",
