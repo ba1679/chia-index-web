@@ -221,15 +221,15 @@ export default {
           childs: [
             {
               title: "分類1",
-              to: { name: "Home" }
+              to: { name: "SalesHome" }
             },
             {
               title: "分類2",
-              to: { name: "Home" }
+              to: { name: "SalesHome" }
             },
             {
               title: "分類3",
-              to: { name: "Home" }
+              to: { name: "SalesHome" }
             }
           ]
         },
