@@ -40,7 +40,7 @@
       <v-container>
         <v-row>
           <v-col :cols="isMobile ? 12 : 4">
-            <v-card flat link class="relative item-card-1">
+            <v-card flat link class="relative item-card-1" height="100%">
               <v-img
                 class="item-bg"
                 src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
@@ -52,7 +52,7 @@
             </v-card>
           </v-col>
           <v-col :cols="isMobile ? 12 : 4">
-            <v-card flat link class="relative item-card-2">
+            <v-card flat link class="relative item-card-2" height="100%">
               <v-img
                 class="item-bg"
                 src="https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=784&q=80"
@@ -64,29 +64,33 @@
             </v-card>
           </v-col>
           <v-col :cols="isMobile ? 12 : 4">
-            <v-card flat link class="relative item-card-2">
+            <v-card flat link class="relative item-card-2" height="100%">
               <v-img
+                class="item-bg"
                 src="https://images.unsplash.com/photo-1523374488371-bf3bafcf86bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               ></v-img>
             </v-card>
           </v-col>
           <v-col :cols="isMobile ? 12 : 4">
-            <v-card flat link class="relative item-card-2">
+            <v-card flat link class="relative item-card-2" height="100%">
               <v-img
+                class="item-bg"
                 src="https://images.unsplash.com/photo-1600228390270-970186129936?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               ></v-img>
             </v-card>
           </v-col>
           <v-col :cols="isMobile ? 12 : 4">
-            <v-card flat link class="relative item-card-2">
+            <v-card flat link class="relative item-card-2" height="100%">
               <v-img
+                class="item-bg"
                 src="https://images.unsplash.com/photo-1531751519425-e1fa9110434b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               ></v-img>
             </v-card>
           </v-col>
           <v-col :cols="isMobile ? 12 : 4">
-            <v-card flat link class="relative item-card-2">
+            <v-card flat link class="relative item-card-2" height="100%">
               <v-img
+                class="item-bg"
                 src="https://images.unsplash.com/photo-1521145369939-d3a47a4e18fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=769&q=80"
               ></v-img>
             </v-card>
@@ -264,6 +268,7 @@ export default {
   .item-bg {
     transform: scale(1);
     transition: all 0.3s;
+    height: 100%;
   }
   .item-card-1:hover,
   .item-card-2:hover {
