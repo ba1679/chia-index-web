@@ -41,9 +41,19 @@ const routes = [
         component: () => import("@/views/User/UserProfileForm.vue")
       },
       {
-        path: "/buy-list",
-        name: "BuyList",
-        component: () => import("@/views/User/BuyList.vue")
+        path: "/purchase-list",
+        name: "UserPurchaseList",
+        component: () => import("@/views/User/UserPurchaseList.vue")
+      },
+      {
+        path: "/address",
+        name: "UserAddress",
+        component: () => import("@/views/User/UserAddress.vue")
+      },
+      {
+        path: "/payment",
+        name: "UserPayment",
+        component: () => import("@/views/User/UserPayment.vue")
       }
     ]
   },

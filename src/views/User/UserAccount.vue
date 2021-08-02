@@ -31,6 +31,7 @@
                   v-for="child in item.items"
                   :key="child.title"
                   v-model="child.active"
+                  :to="child.to"
                 >
                   <v-list-item-content>
                     <v-list-item-title>
@@ -66,16 +67,16 @@ export default {
           color: "primary",
           active: true,
           items: [
-            { title: "個人資料", active: true },
-            { title: "收件地址" },
-            { title: "支付管理" }
+            { title: "個人資料", to: { name: "UserProfileForm" } },
+            { title: "收件地址", to: { name: "UserAddress" } },
+            { title: "支付管理", to: { name: "UserPayment" } }
           ],
           title: "我的帳戶"
         },
         {
           action: "mdi-clipboard-list-outline",
           color: "primary",
-          to: { name: "BuyList" },
+          to: { name: "UserPurchaseList" },
           title: "購買清單"
         },
         {
@@ -96,5 +97,8 @@ export default {
 <style lang="scss">
 .user-account {
   background-color: #f5f5f5;
+}
+.side-list.v-list {
+  background-color: transparent;
 }
 </style>
