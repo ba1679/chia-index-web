@@ -46,8 +46,3 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.side-list.v-list {
-  background-color: transparent;
-}
-</style>
