@@ -32,6 +32,22 @@ const routes = [
     component: () => import("@/views/SignIn.vue")
   },
   {
+    path: "/user-account",
+    component: () => import("@/views/User/UserAccount.vue"),
+    children: [
+      {
+        path: "",
+        name: "UserProfileForm",
+        component: () => import("@/views/User/UserProfileForm.vue")
+      },
+      {
+        path: "/buy-list",
+        name: "BuyList",
+        component: () => import("@/views/User/BuyList.vue")
+      }
+    ]
+  },
+  {
     // :id
     path: "/sales-store-info",
     name: "SalesStoreInfo",

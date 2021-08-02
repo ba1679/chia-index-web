@@ -67,7 +67,9 @@
         </li>
       </ul>
       <v-btn text @click="toSignUp"> {{ $t("__register") }} </v-btn> |
-      <v-btn text :to="{ name: 'SignIn' }"> {{ $t("__sign_in") }} </v-btn>
+      <v-btn text :to="{ name: 'UserProfileForm' }">
+        {{ $t("__sign_in") }}
+      </v-btn>
     </v-system-bar>
     <!-- search bar -->
     <v-app-bar :height="barHeight" color="primary" dark elevation="0">
