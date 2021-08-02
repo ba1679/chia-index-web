@@ -19,15 +19,30 @@
   "__hot_store": "Hot",
   "__good_items": "Good Items",
   "__shop_now": "Shop now",
+  "__food_book_now": "Book now",
   "__store": "Store",
   "__follow": "Follow",
   "__shop_immediately": "Shop now",
 
   "__store_info_kol_recommend":"KOL recommend",
+  "__store_info_people_recommend":"Gourmet recommend",
   "__store_info_kol_recommend_for_you":"Recommend for you",
   "__store_info_customer_service": "Customer service",
   "__store_info_customer_service_law": "Terms & Conditions",
   "__store_info_customer_service_return": "Returns & Refunds",
+
+  "__store_info_book_service": "Book online",
+  "__store_info_open_time": "Open time",
+  "__store_info_hold_reservation": "Hold reservation",
+  "__store_info_cancel_reservation": "Cancel reservation",
+
+  "__service_store_book_notice":"Reservation notice",
+  "__service_store_book_available":"Available time",
+  "__service_store_book_cancel_method":"Cancel reservation",
+  "__service_store_book_other_notice":"Other Notice",
+  "__service__store_info_people_recommend":"People recommend",
+  "__service__store_info_go_book":"Book",
+  "__service__store_info_more_service":"More service",
 
   
   "__functions": "Functions",
