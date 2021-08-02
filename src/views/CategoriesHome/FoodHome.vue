@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="food-home">
     <!-- ad -->
       <v-card flat rounded="false" class="mb-2">
         <v-card-text class="pt-0">
@@ -9,42 +9,42 @@
                 <v-col lg="3" class="hidden-md-and-down">
                   <ul class="category-tab relative">
                     <li class="category-tab-1">
-                      零售分類1 
+                      餐飲分類1 
                       <v-icon right color="white">mdi-arrow-right</v-icon>
                       <ul class="category-list category-list-1" >
                         <li>各個分類內容1</li>
                       </ul>
                     </li>
                     <li class="category-tab-2">
-                      零售分類2
+                      餐飲分類2
                       <v-icon right color="white">mdi-arrow-right</v-icon>
                       <ul class="category-list category-list-2" >
                         <li>各個分類內容2</li>
                       </ul>
                     </li>
                     <li class="category-tab-3">
-                      零售分類3
+                      餐飲分類3
                       <v-icon right color="white">mdi-arrow-right</v-icon>
                       <ul class="category-list category-list-3" >
                         <li>各個分類內容3</li>
                       </ul>
                     </li>
                     <li class="category-tab-4">
-                      零售分類4
+                      餐飲分類4
                       <v-icon right color="white">mdi-arrow-right</v-icon>
                       <ul class="category-list category-list-4" >
                         <li>各個分類內容4</li>
                       </ul>
                     </li>
                     <li class="category-tab-5">
-                      零售分類5
+                      餐飲分類5
                       <v-icon right color="white">mdi-arrow-right</v-icon>
                       <ul class="category-list category-list-5" >
                         <li>各個分類內容5</li>
                       </ul>
                     </li>
                     <li class="category-tab-6">
-                      零售分類6
+                      餐飲分類6
                       <v-icon right color="white">mdi-arrow-right</v-icon>
                       <ul class="category-list category-list-6" >
                         <li>各個分類內容6</li>
@@ -122,7 +122,7 @@
             :key="n"
             class="mr-2" 
           >
-          <v-card link max-width="250" class="ma-1" :to="{name:'SalesStoreInfo'}">
+          <v-card link max-width="250" class="ma-1" :to="{name:'FoodStoreInfo'}">
             <v-img contain src=https://picsum.photos/id/3/200></v-img>
             <v-card-title class="text-h5-1 primary--text pb-0"> 
               店家名稱 
@@ -205,10 +205,10 @@
 </template>
 <script>
 export default {
-  name:'SalesHome',
+  name:'FoodHome',
   data(){
     return {
-       colors: [
+      colors: [
         "indigo",
         "warning",
         "pink darken-2",
@@ -263,20 +263,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.category-card {
-  cursor: pointer;
-  border: 1px solid #eee;
-  transition: all 0.3s;
-}
-.category-card:hover {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-}
-
 .category-tab {
   border-radius: 0 0 0 4px;
   border-left: 1px solid transparent;
   padding-left: 0;
-  background-color: #F37EA5;
+  background-color: #BF74CC;
   color: #fff;
   li {
     padding: 10.5px;
@@ -286,48 +277,48 @@ export default {
 }
 .category-tab-1:hover {
   background-color: #fff;
-  color: #F37EA5;
-  border-color: #F37EA5;
+  color: #BF74CC;
+  border-color: #BF74CC;
   .category-list-1 {
     display: block;
   }
 }
 .category-tab-2:hover {
   background-color: #fff;
-  color: #F37EA5;
-  border-color: #F37EA5;
+  color: #BF74CC;
+  border-color: #BF74CC;
   .category-list-2 {
     display: block;
   }
 }
 .category-tab-3:hover {
   background-color: #fff;
-  color: #F37EA5;
-  border-color: #F37EA5;
+  color: #BF74CC;
+  border-color: #BF74CC;
   .category-list-3 {
     display: block;
   }
 }
 .category-tab-4:hover {
   background-color: #fff;
-  color: #F37EA5;
-  border-color: #F37EA5;
+  color: #BF74CC;
+  border-color: #BF74CC;
   .category-list-4 {
     display: block;
   }
 }
 .category-tab-5:hover {
   background-color: #fff;
-  color: #F37EA5;
-  border-color: #F37EA5;
+  color: #BF74CC;
+  border-color: #BF74CC;
   .category-list-5 {
     display: block;
   }
 }
 .category-tab-6:hover {
   background-color: #fff;
-  color: #F37EA5;
-  border-color: #F37EA5;
+  color: #BF74CC;
+  border-color: #BF74CC;
   .category-list-6 {
     display: block;
   }
@@ -336,7 +327,7 @@ export default {
   color: #000;
   display: none;
   position: absolute;
-  border: 2px solid #F37EA5;
+  border: 2px solid #BF74CC;
   border-radius: 0 4px 4px 0;
   left: 100%;
   top: 0;

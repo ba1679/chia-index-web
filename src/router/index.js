@@ -12,17 +12,17 @@ const routes = [
       {
         path: "",
         name: "SalesHome",
-        component: () => import("@/views/Categories/SalesHome.vue")
+        component: () => import("@/views/CategoriesHome/SalesHome.vue")
       },
       {
         path: "/food-home",
         name: "FoodHome",
-        component: () => import("@/views/Categories/FoodHome.vue")
+        component: () => import("@/views/CategoriesHome/FoodHome.vue")
       },
       {
         path: "service-home",
         name: "ServiceHome",
-        component: () => import("@/views/Categories/ServiceHome.vue")
+        component: () => import("@/views/CategoriesHome/ServiceHome.vue")
       }
     ]
   },
