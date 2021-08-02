@@ -299,7 +299,6 @@ export default {
   @media (min-width: 600px) {
     position: absolute;
     bottom: 50%;
-    right: 10px;
   }
 }
 @media (max-width: 600px) {
