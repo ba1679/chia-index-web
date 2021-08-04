@@ -2,7 +2,7 @@
   <div class="user-account">
     <v-container>
       <v-row>
-        <v-col cols="2">
+        <v-col cols="3">
           <div class="d-flex justify-center">
             <v-img
               class="rounded-circle"
@@ -49,7 +49,7 @@
             </template>
           </v-list>
         </v-col>
-        <v-col cols="10">
+        <v-col cols="9">
           <router-view></router-view>
         </v-col>
       </v-row>
@@ -76,7 +76,7 @@ export default {
         {
           action: "mdi-clipboard-list-outline",
           color: "primary",
-          to: { name: "UserPurchaseList" },
+          to: { name: "UserPurchaseLists" },
           title: "購買清單"
         },
         {

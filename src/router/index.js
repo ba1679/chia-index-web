@@ -41,9 +41,16 @@ const routes = [
         component: () => import("@/views/User/UserProfileForm.vue")
       },
       {
-        path: "/purchase-list",
-        name: "UserPurchaseList",
-        component: () => import("@/views/User/UserPurchaseList.vue")
+        path: "/purchase-lists",
+        name: "UserPurchaseLists",
+        component: () => import("@/views/User/UserPurchaseLists.vue"),
+        children: [
+          {
+            path: ":id",
+            name: "PurchaseList",
+            component: () => import("@/views/PurchaseList/PurchaseList.vue")
+          }
+        ]
       },
       {
         path: "/address",

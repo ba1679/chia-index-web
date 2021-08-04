@@ -13,9 +13,11 @@
     <v-card
       flat
       outlined
+      link
       class="mb-3"
       v-for="order in orderData"
       :key="order.id"
+      @click="toOrder(order.id)"
     >
       <v-card-title class="justify-space-between">
         <div>
@@ -56,7 +58,7 @@
 </template>
 <script>
 export default {
-  name: "UserPurchaseList",
+  name: "UserPurchaseLists",
   data() {
     return {
       tabList: ["全部", "待付款", "待出貨", "待收貨", "完成", "已取消"],
@@ -107,6 +109,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    toOrder(id) {
+      console.log(id);
+    }
   }
 };
 </script>
