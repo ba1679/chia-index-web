@@ -1,5 +1,5 @@
 <template>
-  <v-container class="bg-white h-100">
+  <v-container class="bg-white h-100 px-5">
     <v-row class="my-3">
       <v-col cols="12">
         <div class="text-h5 d-flex">

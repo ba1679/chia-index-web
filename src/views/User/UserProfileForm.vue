@@ -1,5 +1,5 @@
 <template>
-  <v-container class="bg-white h-100">
+  <v-container class="bg-white h-100 px-5">
     <v-row class="my-3">
       <v-col cols="12">
         <div class="text-h5">
@@ -15,10 +15,10 @@
           :key="profileInputLabel"
           align="start"
         >
-          <v-col cols="3">
+          <v-col cols="4">
             <v-subheader>{{ profileInputLabel }}</v-subheader>
           </v-col>
-          <v-col cols="9">
+          <v-col cols="8">
             <v-text-field outlined dense></v-text-field>
           </v-col>
         </v-row>
