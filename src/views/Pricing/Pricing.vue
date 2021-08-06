@@ -32,7 +32,11 @@
         <div class="mt-2">交易手續費 & 模組月費 (每月結算)</div>
       </v-sheet>
       <v-row justify="center">
-        <v-col cols="3" v-for="data in payAsYouGoDatas" :key="data.icon">
+        <v-col
+          :cols="isMobile ? 6 : 3"
+          v-for="data in payAsYouGoDatas"
+          :key="data.icon"
+        >
           <v-card outlined height="100%" class="d-flex flex-column">
             <v-card-text class="d-flex flex-column text-center">
               <v-icon x-large color="primary">
@@ -65,12 +69,12 @@
           </thead>
           <tbody>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 電商平台功能
               </th>
             </tr>
             <tr v-for="item in payAsYouGoPlatformTable" :key="item.feature">
-              <th>{{ item.feature }}</th>
+              <th class="text-md-subtitle-2">{{ item.feature }}</th>
               <td v-if="item.personal === true">
                 <v-icon color="primary">mdi-check-bold</v-icon>
               </td>
@@ -87,20 +91,22 @@
               <td v-else>{{ item.business }}</td>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 第三方支付平台
               </th>
             </tr>
             <tr>
-              <th colspan="3" class="text-center">無第三方支付平台</th>
+              <th colspan="3" class="text-center text-md-subtitle-2">
+                無第三方支付平台
+              </th>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 金流
               </th>
             </tr>
             <tr v-for="item in payAsYouGoPaymentTable" :key="item.feature">
-              <th>{{ item.feature }}</th>
+              <th class="text-md-subtitle-2">{{ item.feature }}</th>
               <td v-if="item.personal === true">
                 <v-icon color="primary">mdi-check-bold</v-icon>
               </td>
@@ -117,12 +123,12 @@
               <td v-else>{{ item.business }}</td>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 物流
               </th>
             </tr>
             <tr v-for="item in payAsYouGoShippingTable" :key="item.feature">
-              <th>{{ item.feature }}</th>
+              <th class="text-md-subtitle-2">{{ item.feature }}</th>
               <td v-if="item.personal === true">
                 <v-icon color="primary">mdi-check-bold</v-icon>
               </td>
@@ -139,12 +145,12 @@
               <td v-else>{{ item.business }}</td>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 消費者前台
               </th>
             </tr>
             <tr v-for="item in payAsYouGoConsumerWebTable" :key="item.feature">
-              <th>{{ item.feature }}</th>
+              <th class="text-md-subtitle-2">{{ item.feature }}</th>
               <td v-if="item.personal === true">
                 <v-icon color="primary">mdi-check-bold</v-icon>
               </td>
@@ -161,12 +167,12 @@
               <td v-else>{{ item.business }}</td>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 商店後台管理系統
               </th>
             </tr>
             <tr v-for="item in payAsYouGoStoreManageTable" :key="item.feature">
-              <th>{{ item.feature }}</th>
+              <th class="text-md-subtitle-2">{{ item.feature }}</th>
               <td v-if="item.personal === true">
                 <v-icon color="primary">mdi-check-bold</v-icon>
               </td>
@@ -183,23 +189,27 @@
               <td v-else>{{ item.business }}</td>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 優惠設定
               </th>
             </tr>
             <tr>
-              <th colspan="3" class="text-center">無優惠設定</th>
+              <th colspan="3" class="text-center text-md-subtitle-2">
+                無優惠設定
+              </th>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 代碼管理及廣告追蹤工具
               </th>
             </tr>
             <tr>
-              <th colspan="3" class="text-center">無代碼管理及廣告追蹤工具</th>
+              <th colspan="3" class="text-center text-md-subtitle-2">
+                無代碼管理及廣告追蹤工具
+              </th>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 統計分析
               </th>
             </tr>
@@ -207,7 +217,7 @@
               v-for="item in payAsYouGoStoreAnalysisTable"
               :key="item.feature"
             >
-              <th>{{ item.feature }}</th>
+              <th class="text-md-subtitle-2">{{ item.feature }}</th>
               <td v-if="item.personal === true">
                 <v-icon color="primary">mdi-check-bold</v-icon>
               </td>
@@ -224,12 +234,12 @@
               <td v-else>{{ item.business }}</td>
             </tr>
             <tr class="bg-primary white--text tbody-header">
-              <th colspan="3">
+              <th colspan="3" class="text-md-subtitle-1">
                 Telegram bot
               </th>
             </tr>
             <tr v-for="item in payAsYouGoTelegramBotTable" :key="item.feature">
-              <th>{{ item.feature }}</th>
+              <th class="text-md-subtitle-1">{{ item.feature }}</th>
               <td v-if="item.personal === true">
                 <v-icon color="primary">mdi-check-bold</v-icon>
               </td>
@@ -252,8 +262,15 @@
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Pricing",
+  computed: {
+    ...mapGetters({
+      isMobile: "isMobile"
+    })
+  },
   data() {
     return {
       currentTab: "payAsYouGo",
