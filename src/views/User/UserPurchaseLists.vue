@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     toOrder(id) {
-      console.log(id);
+      this.$router.push({ name: "PurchaseList", params: { id: id } });
     }
   }
 };

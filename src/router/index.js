@@ -3,6 +3,12 @@ import VueRouter from "vue-router";
 // import { auth } from '@/plugins/firebase'
 
 Vue.use(VueRouter);
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject)
+    return originalPush.call(this, location, onResolve, onReject);
+  return originalPush.call(this, location).catch(err => err);
+};
 
 const routes = [
   {
@@ -32,6 +38,11 @@ const routes = [
     component: () => import("@/views/SignIn.vue")
   },
   {
+    path: "/pricing",
+    name: "Pricing",
+    component: () => import("@/views/Pricing/Pricing.vue")
+  },
+  {
     path: "/user-account",
     component: () => import("@/views/User/UserAccount.vue"),
     children: [
@@ -43,14 +54,12 @@ const routes = [
       {
         path: "/purchase-lists",
         name: "UserPurchaseLists",
-        component: () => import("@/views/User/UserPurchaseLists.vue"),
-        children: [
-          {
-            path: ":id",
-            name: "PurchaseList",
-            component: () => import("@/views/PurchaseList/PurchaseList.vue")
-          }
-        ]
+        component: () => import("@/views/User/UserPurchaseLists.vue")
+      },
+      {
+        path: "/purchase-list/:id",
+        name: "PurchaseList",
+        component: () => import("@/views/PurchaseList/PurchaseList.vue")
       },
       {
         path: "/address",

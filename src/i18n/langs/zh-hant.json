@@ -6,6 +6,7 @@
 
   "__store_center": "賣家中心",
   "__download": "下載",
+  "__store_pricing": "開店方案",
   "__follow_us": "追蹤我們",
   "__notifications": "通知總覽",
   "__helping_center": "幫助中心",
@@ -56,6 +57,10 @@
   "__service__store_info_people_recommend":"網友熱烈好評",
   "__service__store_info_go_book":"前往預約",
   "__service__store_info_more_service":"查看更多",
+
+  "__store_pricing_title": "收費方案與功能比較",
+  "__store_pricing_pay_as_you_go": "用多少付多少",
+  "__store_pricing_month": "月費制",
 
   "__register": "註冊",
   "__sign_in": "登入"
