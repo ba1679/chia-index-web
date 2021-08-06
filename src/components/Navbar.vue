@@ -16,7 +16,9 @@
         </li>
         |
         <li class="mx-2">
-          <a href="#">{{ $t("__download") }}</a>
+          <router-link :to="{ name: 'Pricing' }">{{
+            $t("__store_pricing")
+          }}</router-link>
         </li>
         |
         <li class="ml-2 d-flex aligin-center">
