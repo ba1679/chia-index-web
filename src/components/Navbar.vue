@@ -67,7 +67,9 @@
         </li>
       </ul>
       <v-btn text @click="toSignUp"> {{ $t("__register") }} </v-btn> |
-      <v-btn text :to="{ name: 'SignIn' }"> {{ $t("__sign_in") }} </v-btn>
+      <v-btn text :to="{ name: 'UserProfileForm' }">
+        {{ $t("__sign_in") }}
+      </v-btn>
     </v-system-bar>
     <!-- search bar -->
     <v-app-bar :height="barHeight" color="primary" dark elevation="0">
@@ -78,7 +80,10 @@
       <v-row dense :class="{ 'flex-column': isMobile }">
         <v-col md="1" sm="6">
           <v-toolbar-title class="headline mr-3">
-            <router-link class="d-flex justify-center" :to="{ name: 'Home' }">
+            <router-link
+              class="d-flex justify-center"
+              :to="{ name: 'SalesHome' }"
+            >
               <v-img
                 alt="Logo"
                 class="shrink mr-2"
@@ -218,15 +223,15 @@ export default {
           childs: [
             {
               title: "分類1",
-              to: { name: "Home" }
+              to: { name: "SalesHome" }
             },
             {
               title: "分類2",
-              to: { name: "Home" }
+              to: { name: "SalesHome" }
             },
             {
               title: "分類3",
-              to: { name: "Home" }
+              to: { name: "SalesHome" }
             }
           ]
         },

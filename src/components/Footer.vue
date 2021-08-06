@@ -21,13 +21,13 @@
           <v-row justify="center">
             <v-col cols="4">
               <p class="text-h5 font-weight-bold">{{ $t("__functions") }}</p>
-              <router-link :to="{ name: 'Home' }" class="white--text">{{
+              <router-link :to="{ name: 'SalesHome' }" class="white--text">{{
                 $t("__services")
               }}</router-link>
             </v-col>
             <v-col cols="4"
               ><p class="text-h5 font-weight-bold">擴充模組</p>
-              <router-link :to="{ name: 'Home' }" class="white--text"
+              <router-link :to="{ name: 'SalesHome' }" class="white--text"
                 >Telegram安裝</router-link
               ></v-col
             >
@@ -36,16 +36,16 @@
                 {{ $t("__more_resources") }}
               </p>
               <div class="d-flex flex-column">
-                <router-link :to="{ name: 'Home' }" class="white--text">{{
+                <router-link :to="{ name: 'SalesHome' }" class="white--text">{{
                   $t("__store_lecture")
                 }}</router-link>
-                <router-link :to="{ name: 'Home' }" class="white--text">{{
+                <router-link :to="{ name: 'SalesHome' }" class="white--text">{{
                   $t("__blog")
                 }}</router-link>
-                <router-link :to="{ name: 'Home' }" class="white--text">{{
+                <router-link :to="{ name: 'SalesHome' }" class="white--text">{{
                   $t("__recommend_article")
                 }}</router-link>
-                <router-link :to="{ name: 'Home' }" class="white--text">{{
+                <router-link :to="{ name: 'SalesHome' }" class="white--text">{{
                   $t("__corporation")
                 }}</router-link>
               </div>
@@ -64,10 +64,12 @@
             </v-col>
             <v-col cols="4" class="hidden-md-and-down"></v-col>
             <v-col sm="6" lg="4">
-              <router-link class="white--text mr-3" :to="{ name: 'Home' }">{{
-                $t("__terms_of_services")
-              }}</router-link>
-              <router-link class="white--text" :to="{ name: 'Home' }">{{
+              <router-link
+                class="white--text mr-3"
+                :to="{ name: 'SalesHome' }"
+                >{{ $t("__terms_of_services") }}</router-link
+              >
+              <router-link class="white--text" :to="{ name: 'SalesHome' }">{{
                 $t("__privacy_policy")
               }}</router-link>
             </v-col>
