@@ -61,6 +61,8 @@
   "__store_pricing_title": "收費方案與功能比較",
   "__store_pricing_pay_as_you_go": "用多少付多少",
   "__store_pricing_month": "月費制",
+  "__store_pricing_newbie_level": "新手等級",
+  "__store_pricing_normal_level": "普通等級",
 
   "__register": "註冊",
   "__sign_in": "登入"
