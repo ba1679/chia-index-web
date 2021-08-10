@@ -43,7 +43,7 @@
           <tr>
             <th></th>
             <th class="text-left text-md-h5 font-weight-bold">
-              {{ $t("__store_pricing_personal") }}
+              {{ $t("__store_pricing_individual") }}
             </th>
             <th class="text-left text-md-h5 font-weight-bold">
               {{ $t("__store_pricing_business") }}
@@ -58,13 +58,13 @@
           </tr>
           <tr v-for="item in payAsYouGoPlatformTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -90,13 +90,13 @@
           </tr>
           <tr v-for="item in payAsYouGoPaymentTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -112,13 +112,13 @@
           </tr>
           <tr v-for="item in payAsYouGoShippingTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -134,13 +134,13 @@
           </tr>
           <tr v-for="item in payAsYouGoConsumerWebTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -151,18 +151,18 @@
           </tr>
           <tr class="bg-primary white--text tbody-header">
             <th colspan="3" class="text-md-subtitle-1">
-              商店後台管理系統
+              {{ $t("__store_pricing_store_manage") }}
             </th>
           </tr>
           <tr v-for="item in payAsYouGoStoreManageTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -173,18 +173,18 @@
           </tr>
           <tr class="bg-primary white--text tbody-header">
             <th colspan="3" class="text-md-subtitle-1">
-              優惠設定
+              {{ $t("__store_pricing_sales_setting") }}
             </th>
           </tr>
           <tr v-for="item in payAsYouGoSalesSettingTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -210,13 +210,13 @@
           </tr>
           <tr v-for="item in payAsYouGoStoreAnalysisTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -227,18 +227,18 @@
           </tr>
           <tr class="bg-primary white--text tbody-header">
             <th colspan="3" class="text-md-subtitle-1">
-              {{ $t("__store_pricing_telegram_bod") }}
+              {{ $t("__store_pricing_telegram_bot") }}
             </th>
           </tr>
           <tr v-for="item in payAsYouGoTelegramBotTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -268,420 +268,434 @@ export default {
         {
           badge: this.$t("__store_pricing_newbie_level"),
           icon: "mdi-account",
-          type: "個人賣家",
-          text: "新手賣家，小資經營"
+          type: this.$t("__store_pricing_individual"),
+          text: this.$t("__store_pricing_individual_suitable")
         },
         {
           badge: this.$t("__store_pricing_normal_level"),
           icon: "mdi-store",
-          type: "商業賣家",
-          text: "有統編之小本經營賣家，月銷售額 20 萬以下"
+          type: this.$t("__store_pricing_business"),
+          text: this.$t("__store_pricing_business_suitable")
         }
       ],
       payAsYouGoPlatformTable: [
         {
-          feature: "商店後台管理系統",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_store_manage"),
+          individual: true,
           business: true
         },
         {
-          feature: "聊天室商店",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_chat_store"),
+          individual: true,
           business: true
         },
         {
-          feature: "chia入口網站攤位",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_chia_entry"),
+          individual: true,
           business: true
         },
         {
-          feature: "chia入口網站廣告露出",
-          personal: "依chia活動方案",
-          business: "依chia活動方案"
+          feature: this.$t("__store_pricing_platform_chia_entry_AD"),
+          individual: this.$t("__store_pricing_platform_chia_entry_AD_text"),
+          business: this.$t("__store_pricing_platform_chia_entry_AD_text")
         },
         {
-          feature: "聊天式行業行銷工具telegram 商店模組",
-          personal: "零售模組",
-          business: "零售/直播"
+          feature: this.$t("__store_pricing_platform_chat_marketing"),
+          individual: this.$t("__store_pricing_platform_chat_marketing_retail"),
+          business: this.$t(
+            "__store_pricing_platform_chat_marketing_retail_live"
+          )
         },
         {
-          feature: "一頁式網站首頁",
-          personal: "有chia框架",
-          business: "有chia框架"
+          feature: this.$t("__store_pricing_platform_one_page_web"),
+          individual: this.$t("__store_pricing_platform_one_page_web_chia"),
+          business: this.$t("__store_pricing_platform_one_page_web_chia")
         },
         {
-          feature: "(獨立)一頁式網站首頁",
-          personal: false,
+          feature: this.$t("__store_pricing_platform_one_page_web_independent"),
+          individual: false,
           business: false
         },
         {
-          feature: "一頁式商店",
-          personal: "有chia框架",
-          business: "有chia框架"
+          feature: this.$t("__store_pricing_platform_one_page_store"),
+          individual: this.$t("__store_pricing_platform_one_page_web_chia"),
+          business: this.$t("__store_pricing_platform_one_page_web_chia")
         },
         {
-          feature: "(獨立)一頁式商店",
-          personal: false,
+          feature: this.$t(
+            "__store_pricing_platform_one_page_store_independent"
+          ),
+          individual: false,
           business: false
         },
         {
-          feature: "chia網域網址",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_chia_domain"),
+          individual: true,
           business: true
         },
         {
-          feature: "交易手續費(銷售額越高，手續費越低)",
-          personal: "5%~3%",
+          feature: this.$t("__store_pricing_platform_transaction_fees"),
+          individual: "5%~3%",
           business: "5%~3%"
         }
       ],
       payAsYouGoPaymentTable: [
         {
-          feature: "現金",
-          personal: true,
+          feature: this.$t("__store_pricing_cash"),
+          individual: true,
           business: true
         },
         {
-          feature: "行動支付 apply pay, google pay, samsung pay",
-          personal: false,
+          feature: this.$t("__store_pricing_mobile_payment"),
+          individual: false,
           business: false
         },
         {
-          feature: "ATM匯款",
-          personal: true,
+          feature: this.$t("__store_pricing_ATM"),
+          individual: true,
           business: true
         },
         {
-          feature: "貨到付款",
-          personal: true,
+          feature: this.$t("__store_pricing_cash_on_delivery"),
+          individual: true,
           business: true
         },
         {
-          feature: "超商條碼支付",
-          personal: false,
+          feature: this.$t("__store_pricing_store_bar_code"),
+          individual: false,
           business: false
         },
         {
-          feature: "超商取貨付款",
-          personal: false,
+          feature: this.$t("__store_pricing_store_cash_on_delivery"),
+          individual: false,
           business: false
         },
         {
-          feature: "信用卡",
-          personal: false,
+          feature: this.$t("__store_pricing_credit_card"),
+          individual: false,
           business: false
         },
         {
-          feature: "信用卡分期",
-          personal: false,
+          feature: this.$t("__store_pricing_credit_card_installment"),
+          individual: false,
           business: false
         }
       ],
       payAsYouGoShippingTable: [
         {
-          feature: "郵局",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_post_office"),
+          individual: true,
           business: true
         },
         {
-          feature: "自訂宅配物流商",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_custom"),
+          individual: true,
           business: true
         },
         {
-          feature: "超商店到店",
-          personal: false,
+          feature: this.$t("__store_pricing_shipping_store_to_store"),
+          individual: false,
           business: false
         },
         {
-          feature: "虛擬產品(不需運送)",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_virtual_item"),
+          individual: true,
           business: true
         },
         {
-          feature: "物流查詢網址設定",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_search_web"),
+          individual: true,
           business: true
         }
       ],
       payAsYouGoConsumerWebTable: [
         {
-          feature: "多國語言設定",
-          personal: "中文、英文",
-          business: "中文、英文"
+          feature: this.$t("__store_pricing_consumer_web_languages"),
+          individual: this.$t("__store_pricing_consumer_web_languages_ch_en"),
+          business: this.$t("__store_pricing_consumer_web_languages_ch_en")
         },
         {
-          feature: "RWD瀏覽優化",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_RWD"),
+          individual: true,
           business: true
         },
         {
-          feature: "直播影片串接",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_live_video"),
+          individual: true,
           business: true
         },
         {
-          feature: "一頁式商品頁",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_one_page_web_item"),
+          individual: true,
           business: true
         },
         {
-          feature: "優惠活動設置",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_promotions"),
+          individual: true,
           business: true
         },
         {
-          feature: "chia入口網站搜尋",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_chia_entry_search"),
+          individual: true,
           business: true
         },
         {
-          feature: "入口網站廣告活動",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_chia_entry_AD"),
+          individual: true,
           business: true
         },
         {
-          feature: "telegram商店",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_telegram_store"),
+          individual: true,
           business: true
         }
       ],
       payAsYouGoStoreManageTable: [
         {
-          feature: "telegram 登入",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_telegram_login"),
+          individual: true,
           business: true
         },
         {
-          feature: "可上架商品數",
-          personal: "100項",
-          business: "300項"
+          feature: this.$t("__store_pricing_store_manage_publish_item"),
+          individual:
+            100 +
+            " " +
+            this.$t("__store_pricing_store_manage_publish_item_num"),
+          business:
+            300 + " " + this.$t("__store_pricing_store_manage_publish_item_num")
         },
         {
-          feature: "RWD瀏覽優化 ",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_RWD"),
+          individual: true,
           business: true
         },
         {
-          feature: "多管理員設置",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_multiple_manage"),
+          individual: false,
           business: false
         },
         {
-          feature: "優惠活動排程通知",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_promotions_notify"),
+          individual: true,
           business: true
         },
         {
-          feature: "SSL安全憑證",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_SSL"),
+          individual: true,
           business: true
         },
         {
-          feature: "後台權限控管",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_backend"),
+          individual: false,
           business: false
         },
         {
-          feature: "顧客個資隱藏",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_hide_detail"),
+          individual: true,
           business: true
         },
         {
-          feature: "產品設定",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_item_setting"),
+          individual: true,
           business: true
         },
         {
-          feature: "自動追單",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_auto_tracking"),
+          individual: false,
           business: false
         },
         {
-          feature: "SEO設定",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_SEO"),
+          individual: true,
           business: true
         },
         {
-          feature: "客服設定",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_customer_service"),
+          individual: false,
           business: false
         },
         {
-          feature: "電子發票",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_e-invoice"),
+          individual: false,
           business: false
         },
         {
-          feature: "訂單通知",
-          personal: "簡訊 / Email",
-          business: "簡訊 / Email"
+          feature: this.$t("__store_pricing_store_manage_order_notify"),
+          individual: this.$t(
+            "__store_pricing_store_manage_order_notify_SMS_email"
+          ),
+          business: this.$t(
+            "__store_pricing_store_manage_order_notify_SMS_email"
+          )
         }
       ],
       payAsYouGoSalesSettingTable: [
         {
-          feature: "會員優惠等級",
-          personal: false,
+          feature: this.$t("__store_pricing_sales_setting_member_level"),
+          individual: false,
           business: false
         },
         {
-          feature: "優惠活動時間",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_time"),
+          individual: true,
           business: true
         },
         {
-          feature: "任選優惠",
-          personal: false,
+          feature: this.$t("__store_pricing_sales_setting_choose"),
+          individual: false,
           business: false
         },
         {
-          feature: "組合優惠",
-          personal: false,
+          feature: this.$t("__store_pricing_sales_setting_set"),
+          individual: false,
           business: false
         },
         {
-          feature: "免運",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_free_shipping"),
+          individual: true,
           business: true
         },
         {
-          feature: "滿額免運費",
-          personal: false,
+          feature: this.$t(
+            "__store_pricing_sales_setting_free_shipping_over_price"
+          ),
+          individual: false,
           business: false
         },
         {
-          feature: "滿額贈",
-          personal: false,
+          feature: this.$t("__store_pricing_sales_setting_gift"),
+          individual: false,
           business: false
         },
         {
-          feature: "滿額折扣",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_discount"),
+          individual: true,
           business: true
         },
         {
-          feature: "加購",
-          personal: false,
+          feature: this.$t("__store_pricing_sales_setting_addition"),
+          individual: false,
           business: false
         },
         {
-          feature: "限時結帳優惠",
-          personal: false,
+          feature: this.$t("__store_pricing_sales_setting_limited_time"),
+          individual: false,
           business: false
         },
         {
-          feature: "優惠券(優惠碼)",
-          personal: false,
+          feature: this.$t("__store_pricing_sales_setting_coupon"),
+          individual: false,
           business: false
         }
       ],
       payAsYouGoStoreAnalysisTable: [
         {
-          feature: "商品銷量統計",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_product_sales"),
+          individual: true,
           business: true
         },
         {
-          feature: "營收利潤統計",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_revenue"),
+          individual: true,
           business: true
         },
         {
-          feature: "平均客單價統計",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_average"),
+          individual: true,
           business: true
         },
         {
-          feature: "自訂區間搜尋",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_custom"),
+          individual: true,
           business: true
         }
       ],
       payAsYouGoTelegramBotTable: [
         {
-          feature: "訂閱人數",
-          personal: 500,
+          feature: this.$t("__store_pricing_telegram_bot_subscription"),
+          individual: 500,
           business: 500
         },
         {
-          feature: "Q&A 自動回覆設置(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_Q&A"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "優惠活動訊息發送排程推播",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_promotion_notify"),
+          individual: true,
           business: true
         },
         {
-          feature: "問券分眾工具(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_questionnaire"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "抽獎工具",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_lottery"),
+          individual: true,
           business: true
         },
         {
-          feature: "每日簽到工具",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_daliy_check_in"),
+          individual: true,
           business: true
         },
         {
-          feature: "消費集點工具",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_point"),
+          individual: true,
           business: true
         },
         {
-          feature: "訂位服務工具(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_booking_catering"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "訂房服務工具(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_booking_hotel"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "預訂服務工具(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot__booking_service"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "團購收單工具(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_group_buying"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "新品預售工具(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_item_pre-sale"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "直播收單工具(原價$1000/月)",
-          personal: "優惠價$500/月",
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_live_selling"),
+          individual: this.$t("__store_pricing_telegram_bot_price"),
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "商品關鍵字搜尋工具(原價$1000/月)",
-          personal: false,
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_item_search"),
+          individual: false,
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "人機客務轉接(原價$1000/月)",
-          personal: false,
-          business: "優惠價$500/月"
+          feature: this.$t("__store_pricing_telegram_bot_tel_customer_service"),
+          individual: false,
+          business: this.$t("__store_pricing_telegram_bot_price")
         },
         {
-          feature: "簡訊服務費用(原價$1000/月)",
-          personal: "每則0元",
-          business: "每則0元"
+          feature: this.$t("__store_pricing_telegram_bot_SMS_service"),
+          individual: this.$t("__store_pricing_telegram_bot_SMS_price"),
+          business: this.$t("__store_pricing_telegram_bot_SMS_price")
         },
         {
-          feature: "流量費",
-          personal: "0元",
-          business: "0元"
+          feature: this.$t("__store_pricing_telegram_bot_data_fee"),
+          individual: this.$t("__store_pricing_dollar") + 0,
+          business: this.$t("__store_pricing_dollar") + 0
         }
       ]
     };

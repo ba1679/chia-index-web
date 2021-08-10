@@ -52,7 +52,7 @@
           <tr>
             <th></th>
             <th class="text-left text-md-h5 font-weight-bold">
-              {{ $t("__store_pricing_personal") }}
+              {{ $t("__store_pricing_individual") }}
             </th>
             <th class="text-left text-md-h5 font-weight-bold">
               {{ $t("__store_pricing_normal_business") }}
@@ -70,13 +70,13 @@
           </tr>
           <tr v-for="item in monthlyPlatformTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -99,13 +99,13 @@
           </tr>
           <tr v-for="item in monthlyOnlinePayTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -128,13 +128,13 @@
           </tr>
           <tr v-for="item in monthlyPaymentTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -157,13 +157,13 @@
           </tr>
           <tr v-for="item in monthlyShippingTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -186,13 +186,13 @@
           </tr>
           <tr v-for="item in monthlyConsumerWebTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -210,18 +210,18 @@
           </tr>
           <tr class="bg-primary white--text tbody-header">
             <th colspan="4" class="text-md-subtitle-1">
-              商店後台管理系統
+              {{ $t("__store_pricing_store_manage") }}
             </th>
           </tr>
           <tr v-for="item in monthlyStoreManageTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -239,18 +239,18 @@
           </tr>
           <tr class="bg-primary white--text tbody-header">
             <th colspan="4" class="text-md-subtitle-1">
-              優惠設定
+              {{ $t("__store_pricing_sales_setting") }}
             </th>
           </tr>
           <tr v-for="item in monthlySalesSettingTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -273,13 +273,13 @@
           </tr>
           <tr v-for="item in monthlyAdMarketingTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -302,13 +302,13 @@
           </tr>
           <tr v-for="item in monthlyStoreAnalysisTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -326,18 +326,18 @@
           </tr>
           <tr class="bg-primary white--text tbody-header">
             <th colspan="4" class="text-md-subtitle-1">
-              {{ $t("__store_pricing_telegram_bod") }}
+              {{ $t("__store_pricing_telegram_bot") }}
             </th>
           </tr>
           <tr v-for="item in monthlyTelegramBotTable" :key="item.feature">
             <th class="text-md-subtitle-1">{{ item.feature }}</th>
-            <td v-if="item.personal === true">
+            <td v-if="item.individual === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
-            <td v-else-if="item.personal === false">
+            <td v-else-if="item.individual === false">
               <v-icon>mdi-close-thick</v-icon>
             </td>
-            <td v-else>{{ item.personal }}</td>
+            <td v-else>{{ item.individual }}</td>
             <td v-if="item.business === true">
               <v-icon color="primary">mdi-check-bold</v-icon>
             </td>
@@ -375,8 +375,8 @@ export default {
         {
           badge: this.$t("__store_pricing_bronze_level"),
           icon: "mdi-account",
-          type: "個人賣家",
-          text: "資深個人賣家，月銷售額 20 萬以下",
+          type: this.$t("__store_pricing_individual"),
+          text: this.$t("__store_pricing_senior_individual_suitable"),
           yearPlanPrice: 72000,
           yearPlanDiscount: 30000,
           monthPlanPrice: 6000,
@@ -385,8 +385,8 @@ export default {
         {
           badge: this.$t("__store_pricing_silver_level"),
           icon: "mdi-store",
-          type: "商業賣家",
-          text: "有統編之一般經營賣家，月銷售額 20 萬以上",
+          type: this.$t("__store_pricing_business"),
+          text: this.$t("__store_pricing_normal_business_suitable"),
           yearPlanPrice: 180000,
           yearPlanDiscount: 72000,
           monthPlanPrice: 15000,
@@ -395,8 +395,8 @@ export default {
         {
           badge: this.$t("__store_pricing_gold_level"),
           icon: "mdi-office-building-outline",
-          type: "商業賣家",
-          text: "有統編之大型/國際賣家，有客製化需求",
+          type: this.$t("__store_pricing_business"),
+          text: this.$t("__store_pricing_large_business_suitable"),
           yearPlanPrice: 180000,
           yearPlanDiscount: 72000,
           monthPlanPrice: 15000,
@@ -405,556 +405,606 @@ export default {
       ],
       monthlyPlatformTable: [
         {
-          feature: "商店後台管理系統",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_store_manage"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "聊天室商店",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_chat_store"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "chia入口網站攤位",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_chia_entry"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "chia入口網站廣告露出",
-          personal: "依chia活動方案",
-          business: "依chia活動方案",
-          international: "依chia活動方案"
+          feature: this.$t("__store_pricing_platform_chia_entry_AD"),
+          individual: this.$t("__store_pricing_platform_chia_entry_AD_text"),
+          business: this.$t("__store_pricing_platform_chia_entry_AD_text"),
+          international: this.$t("__store_pricing_platform_chia_entry_AD_text")
         },
         {
-          feature: "聊天式行業行銷工具telegram 商店模組",
-          personal: "零售/餐飲/直播",
-          business: "零售/餐飲/服務/直播",
+          feature: this.$t("__store_pricing_platform_chat_marketing"),
+          individual: this.$t(
+            "__store_pricing_platform_chat_marketing_retail_catering_live"
+          ),
+          business: this.$t(
+            "__store_pricing_platform_chat_marketing_retail_catering_live_service"
+          ),
           international: ""
         },
         {
-          feature: "一頁式網站首頁",
-          personal: "有chia框架",
-          business: "有chia框架",
-          international: "有chia框架"
+          feature: this.$t("__store_pricing_platform_one_page_web"),
+          individual: this.$t("__store_pricing_platform_one_page_web_chia"),
+          business: this.$t("__store_pricing_platform_one_page_web_chia"),
+          international: this.$t("__store_pricing_platform_one_page_web_chia")
         },
         {
-          feature: "(獨立)一頁式網站首頁",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_one_page_web_independent"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "一頁式商店",
-          personal: "有chia框架",
-          business: "有chia框架",
-          international: "有chia框架"
+          feature: this.$t("__store_pricing_platform_one_page_store"),
+          individual: this.$t("__store_pricing_platform_one_page_web_chia"),
+          business: this.$t("__store_pricing_platform_one_page_web_chia"),
+          international: this.$t("__store_pricing_platform_one_page_web_chia")
         },
         {
-          feature: "(獨立)一頁式商店",
-          personal: true,
+          feature: this.$t(
+            "__store_pricing_platform_one_page_store_independent"
+          ),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "chia網域網址",
-          personal: true,
+          feature: this.$t("__store_pricing_platform_chia_domain"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "交易手續費(銷售額越高，手續費越低)",
-          personal: "3%~1%",
+          feature: this.$t("__store_pricing_platform_transaction_fees"),
+          individual: "3%~1%",
           business: "2%~1%",
-          international: "合約訂製"
+          international: this.$t(
+            "__store_pricing_platform_transaction_fees_contract"
+          )
         }
       ],
       monthlyOnlinePayTable: [
         {
-          feature: "Tappay",
-          personal: false,
+          feature: this.$t("__store_pricing_tappay"),
+          individual: false,
           business: true,
           international: true
         },
         {
-          feature: "綠界科技",
-          personal: true,
+          feature: this.$t("__store_pricing_ecpay"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Paypal",
-          personal: false,
+          feature: this.$t("__store_pricing_paypal"),
+          individual: false,
           business: true,
           international: true
         }
       ],
       monthlyPaymentTable: [
         {
-          feature: "現金",
-          personal: true,
+          feature: this.$t("__store_pricing_cash"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "行動支付 apply pay, google pay, samsung pay",
-          personal: "配合第三方支付",
-          business: "配合第三方支付",
-          international: "配合第三方支付"
+          feature: this.$t("__store_pricing_mobile_payment"),
+          individual: this.$t("__store_pricing_third_party"),
+          business: this.$t("__store_pricing_third_party"),
+          international: this.$t("__store_pricing_third_party")
         },
         {
-          feature: "ATM匯款",
-          personal: true,
+          feature: this.$t("__store_pricing_ATM"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "貨到付款",
-          personal: true,
+          feature: this.$t("__store_pricing_cash_on_delivery"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "超商條碼支付",
-          personal: "配合第三方支付",
-          business: "配合第三方支付",
-          international: "配合第三方支付"
+          feature: this.$t("__store_pricing_store_bar_code"),
+          individual: this.$t("__store_pricing_third_party"),
+          business: this.$t("__store_pricing_third_party"),
+          international: this.$t("__store_pricing_third_party")
         },
         {
-          feature: "超商取貨付款",
-          personal: "配合第三方支付",
-          business: "配合第三方支付",
-          international: "配合第三方支付"
+          feature: this.$t("__store_pricing_store_cash_on_delivery"),
+          individual: this.$t("__store_pricing_third_party"),
+          business: this.$t("__store_pricing_third_party"),
+          international: this.$t("__store_pricing_third_party")
         },
         {
-          feature: "信用卡",
-          personal: "配合第三方支付",
-          business: "配合第三方支付",
-          international: "配合第三方支付"
+          feature: this.$t("__store_pricing_credit_card"),
+          individual: this.$t("__store_pricing_third_party"),
+          business: this.$t("__store_pricing_third_party"),
+          international: this.$t("__store_pricing_third_party")
         },
         {
-          feature: "信用卡分期",
-          personal: "配合第三方支付",
-          business: "配合第三方支付",
-          international: "配合第三方支付"
+          feature: this.$t("__store_pricing_credit_card_installment"),
+          individual: this.$t("__store_pricing_third_party"),
+          business: this.$t("__store_pricing_third_party"),
+          international: this.$t("__store_pricing_third_party")
         }
       ],
       monthlyShippingTable: [
         {
-          feature: "郵局",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_post_office"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "自訂宅配物流商",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_custom"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "超商店到店",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_store_to_store"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "虛擬產品(不需運送)",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_virtual_item"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "物流查詢網址設定",
-          personal: true,
+          feature: this.$t("__store_pricing_shipping_search_web"),
+          individual: true,
           business: true,
           international: true
         }
       ],
       monthlyConsumerWebTable: [
         {
-          feature: "多國語言設定",
-          personal: "中文、英文",
-          business: "中文、英文",
-          international: "中文、英文"
+          feature: this.$t("__store_pricing_consumer_web_languages"),
+          individual: this.$t("__store_pricing_consumer_web_languages_ch_en"),
+          business: this.$t("__store_pricing_consumer_web_languages_ch_en"),
+          international: this.$t("__store_pricing_consumer_web_languages_ch_en")
         },
         {
-          feature: "RWD瀏覽優化",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_RWD"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "直播影片串接",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_live_video"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "一頁式商品頁",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_one_page_web_item"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "優惠活動設置",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_promotions"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "chia入口網站搜尋",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_chia_entry_search"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "入口網站廣告活動",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_chia_entry_AD"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "telegram商店",
-          personal: true,
+          feature: this.$t("__store_pricing_consumer_web_telegram_store"),
+          individual: true,
           business: true,
           international: true
         }
       ],
       monthlyStoreManageTable: [
         {
-          feature: "telegram 登入",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_telegram_login"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "可上架商品數",
-          personal: "無限制",
-          business: "無限制",
-          international: "無限制"
+          feature: this.$t("__store_pricing_store_manage_publish_item"),
+          individual: this.$t(
+            "__store_pricing_store_manage_publish_item_unlimited"
+          ),
+          business: this.$t(
+            "__store_pricing_store_manage_publish_item_unlimited"
+          ),
+          international: this.$t(
+            "__store_pricing_store_manage_publish_item_unlimited"
+          )
         },
         {
-          feature: "RWD瀏覽優化 ",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_RWD"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "多管理員設置",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_multiple_manage"),
+          individual: false,
           business: true,
           international: true
         },
         {
-          feature: "優惠活動排程通知",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_promotions_notify"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "SSL安全憑證",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_SSL"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "後台權限控管",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_backend"),
+          individual: false,
           business: true,
           international: true
         },
         {
-          feature: "顧客個資隱藏",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_hide_detail"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "產品設定",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_item_setting"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "自動追單",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_auto_tracking"),
+          individual: false,
           business: false,
           international: true
         },
         {
-          feature: "SEO設定",
-          personal: true,
+          feature: this.$t("__store_pricing_store_manage_SEO"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "客服設定",
-          personal: false,
+          feature: this.$t("__store_pricing_store_manage_customer_service"),
+          individual: false,
           business: true,
           international: true
         },
         {
-          feature: "電子發票",
-          personal: false,
-          business: "配合第三方支付",
-          international: "配合第三方支付"
+          feature: this.$t("__store_pricing_store_manage_e-invoice"),
+          individual: false,
+          business: this.$t("__store_pricing_third_party"),
+          international: this.$t("__store_pricing_third_party")
         },
         {
-          feature: "訂單通知",
-          personal: "簡訊 / Email",
-          business: "簡訊 / Email",
-          international: "簡訊 / Email"
+          feature: this.$t("__store_pricing_store_manage_order_notify"),
+          individual: this.$t(
+            "__store_pricing_store_manage_order_notify_SMS_email"
+          ),
+          business: this.$t(
+            "__store_pricing_store_manage_order_notify_SMS_email"
+          ),
+          international: this.$t(
+            "__store_pricing_store_manage_order_notify_SMS_email"
+          )
         }
       ],
       monthlySalesSettingTable: [
         {
-          feature: "會員優惠等級",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_member_level"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "優惠活動時間",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_time"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "任選優惠",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_choose"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "組合優惠",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_set"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "免運",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_free_shipping"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "滿額免運費",
-          personal: true,
+          feature: this.$t(
+            "__store_pricing_sales_setting_free_shipping_over_price"
+          ),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "滿額贈",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_gift"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "滿額折扣",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_discount"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "加購",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_addition"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "限時結帳優惠",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_limited_time"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "優惠券(優惠碼)",
-          personal: true,
+          feature: this.$t("__store_pricing_sales_setting_coupon"),
+          individual: true,
           business: true,
           international: true
         }
       ],
       monthlyAdMarketingTable: [
         {
-          feature: "Google Analytics",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_google_analytics"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Google Analytics EC",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_google_analytics_EC"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Google Ads",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_google_ads"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Google Ads 再行銷",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_google_ads_remarketing"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Google GTM 代碼管理工具",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_google_GTM"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Google Shopping Ads",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_google_shopping_ads"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Facebook 像素",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_facebook"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "Facebook DPA",
-          personal: true,
+          feature: this.$t("__store_pricing_ad_manage_facebook_DPA"),
+          individual: true,
           business: true,
           international: true
         }
       ],
       monthlyStoreAnalysisTable: [
         {
-          feature: "商品銷量統計",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_product_sales"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "營收利潤統計",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_revenue"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "平均客單價統計",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_average"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "自訂區間搜尋",
-          personal: true,
+          feature: this.$t("__store_pricing_analysis_custom"),
+          individual: true,
           business: true,
           international: true
         }
       ],
       monthlyTelegramBotTable: [
         {
-          feature: "訂閱人數",
-          personal: "無限制",
-          business: "無限制",
-          international: "無限制"
+          feature: this.$t("__store_pricing_telegram_bot_subscription"),
+          individual: this.$t(
+            "__store_pricing_telegram_bot_subscription_unlimited"
+          ),
+          business: this.$t(
+            "__store_pricing_telegram_bot_subscription_unlimited"
+          ),
+          international: this.$t(
+            "__store_pricing_telegram_bot_subscription_unlimited"
+          )
         },
         {
-          feature: "Q&A 自動回覆設置(原價$1000/月)",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_Q&A"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "優惠活動訊息發送排程推播",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_promotion_notify"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "問券分眾工具(原價$1000/月)",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_questionnaire"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "抽獎工具",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_lottery"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "每日簽到工具",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_daliy_check_in"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "消費集點工具",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_point"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "訂位服務工具(原價$1000/月)",
-          personal: "優惠價$200/月，優惠價$2000/年",
-          business: "依類別提供",
-          international: "依類別提供"
+          feature: this.$t("__store_pricing_telegram_bot_booking_catering"),
+          individual: this.$t(
+            "__store_pricing_telegram_bot_booking_catering_special"
+          ),
+          business: this.$t("__store_pricing_telegram_bot_booking_category"),
+          international: this.$t(
+            "__store_pricing_telegram_bot_booking_category"
+          )
         },
         {
-          feature: "訂房服務工具(原價$1000/月)",
-          personal: "優惠價$200/月，優惠價$2000/年",
-          business: "依類別提供",
-          international: "依類別提供"
+          feature: this.$t("__store_pricing_telegram_bot_booking_hotel"),
+          individual: this.$t(
+            "__store_pricing_telegram_bot_booking_hotel_special"
+          ),
+          business: this.$t("__store_pricing_telegram_bot_booking_category"),
+          international: this.$t(
+            "__store_pricing_telegram_bot_booking_category"
+          )
         },
         {
-          feature: "預訂服務工具(原價$1000/月)",
-          personal: "優惠價$200/月，優惠價$2000/年",
-          business: "依類別提供",
-          international: "依類別提供"
+          feature: this.$t("__store_pricing_telegram_bot__booking_service"),
+          individual: this.$t(
+            "__store_pricing_telegram_bot_booking_service_special"
+          ),
+          business: this.$t("__store_pricing_telegram_bot_booking_category"),
+          international: this.$t(
+            "__store_pricing_telegram_bot_booking_category"
+          )
         },
         {
-          feature: "團購收單工具(原價$1000/月)",
-          personal: "優惠價$200/月，優惠價$2000/年",
-          business: "依類別提供",
-          international: "依類別提供"
+          feature: this.$t("__store_pricing_telegram_bot_group_buying"),
+          individual: this.$t(
+            "__store_pricing_telegram_bot_booking_group_special"
+          ),
+          business: this.$t("__store_pricing_telegram_bot_booking_category"),
+          international: this.$t(
+            "__store_pricing_telegram_bot_booking_category"
+          )
         },
         {
-          feature: "新品預售工具(原價$1000/月)",
-          personal: "優惠價$200/月，優惠價$2000/年",
-          business: "依類別提供",
-          international: "依類別提供"
+          feature: this.$t("__store_pricing_telegram_bot_item_pre-sale"),
+          individual: this.$t(
+            "__store_pricing_telegram_bot_booking_pre-sale_special"
+          ),
+          business: this.$t("__store_pricing_telegram_bot_booking_category"),
+          international: this.$t(
+            "__store_pricing_telegram_bot_booking_category"
+          )
         },
         {
-          feature: "直播收單工具(原價$1000/月)",
-          personal: "優惠價$200/月，優惠價$2000/年",
+          feature: this.$t("__store_pricing_telegram_bot_live_selling"),
+          individual: this.$t(
+            "__store_pricing_telegram_bot_booking_live_selling_special"
+          ),
           business: true,
           international: true
         },
         {
-          feature: "商品關鍵字搜尋工具(原價$1000/月)",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_item_search"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "人機客務轉接(原價$1000/月)",
-          personal: true,
+          feature: this.$t("__store_pricing_telegram_bot_tel_customer_service"),
+          individual: true,
           business: true,
           international: true
         },
         {
-          feature: "簡訊服務費用(原價$1000/月)",
-          personal: "每則0元",
-          business: "每則0元",
-          international: "每則0元"
+          feature: this.$t("__store_pricing_telegram_bot_SMS_service"),
+          individual: this.$t("__store_pricing_telegram_bot_SMS_price"),
+          business: this.$t("__store_pricing_telegram_bot_SMS_price"),
+          international: this.$t("__store_pricing_telegram_bot_SMS_price")
         },
         {
-          feature: "流量費",
-          personal: "0元",
-          business: "0元",
-          international: " 0元"
+          feature: this.$t("__store_pricing_telegram_bot_data_fee"),
+          individual: this.$t("__store_pricing_dollar") + 0,
+          business: this.$t("__store_pricing_dollar") + 0,
+          international: this.$t("__store_pricing_dollar") + 0
         }
       ]
     };
