@@ -694,8 +694,8 @@ export default {
         },
         {
           feature: this.$t("__store_pricing_store_manage_auto_tracking"),
-          individual: false,
-          business: false,
+          individual: true,
+          business: true,
           international: true
         },
         {
