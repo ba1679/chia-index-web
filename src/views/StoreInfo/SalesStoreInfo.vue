@@ -152,17 +152,6 @@
           </tbody>
         </table>
       </section>
-      <!-- locatioin map -->
-      <section class="mb-8">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5849204944307!2d121.51372886382393!3d25.048156731639953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1627461025178!5m2!1szh-TW!2stw"
-          width="1200"
-          height="400"
-          style="border:0;"
-          allowfullscreen="true"
-          loading="lazy"
-        ></iframe>
-      </section>
       <!-- customer service -->
       <section class="mt-8">
         <v-divider />
@@ -202,6 +191,17 @@
         </v-row>
       </section>
     </v-container>
+    <!-- locatioin map -->
+    <section>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5849204944307!2d121.51372886382393!3d25.048156731639953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1627461025178!5m2!1szh-TW!2stw"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen="true"
+        loading="lazy"
+      ></iframe>
+    </section>
   </div>
 </template>
 <script>
