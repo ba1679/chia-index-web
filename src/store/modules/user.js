@@ -1,5 +1,5 @@
 import { firebase, firestore, auth } from "@/plugins/firebase";
-import { userAPI } from "@/plugins/service";
+import { consumerAPI } from "@/plugins/service";
 
 export const state = {
   firebaseUser: null,
@@ -131,7 +131,7 @@ export const actions = {
   checkIsAdmin({ commit, dispatch }) {
     return dispatch("user/getUserIDToken", {}, { root: true })
       .then(idToken => {
-        return userAPI.isAdmin(idToken);
+        return consumerAPI.isAdmin(idToken);
       })
       .then(isAdmin => {
         commit("SET_IS_ADMIN", isAdmin);
