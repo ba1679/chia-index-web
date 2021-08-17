@@ -75,7 +75,7 @@ const routes = [
   },
   {
     // :id
-    path: "/sales-store-info",
+    path: "/sales-store-info/:id",
     name: "SalesStoreInfo",
     component: () => import("@/views/StoreInfo/SalesStoreInfo.vue")
   },
