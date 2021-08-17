@@ -17,4 +17,11 @@ export const call = function(api, data = {}) {
   });
 };
 
-export { getStores, getStoreAllCategoryIDs } from "./consumer";
+export {
+  getStores,
+  getStoreAllCategoryIDs,
+  getStoreCategories,
+  getStoreAllItemIDs,
+  getStoreCategoryAllItemIDs,
+  getItems
+} from "./consumer";
