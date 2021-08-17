@@ -196,7 +196,6 @@
 <script>
 import { mapGetters } from "vuex";
 import LanguageSelect from "./LanguageSelect";
-// import { consumerAPI } from "@/plugins/service";
 // import { vueTelegramLogin } from "vue-telegram-login";
 
 export default {
@@ -250,24 +249,6 @@ export default {
     toSignUp() {
       window.location.replace("https://apply.chia-market.com/sign-up");
     }
-  },
-  created() {
-    // consumerAPI
-    //   .getStores(["MTaqxL0kX1JnBANKHGgo"])
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
-    // consumerAPI
-    //   .getStoreAllCategoryIDs("MTaqxL0kX1JnBANKHGgo")
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
   }
 };
 </script>

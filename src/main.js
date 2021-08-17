@@ -13,15 +13,15 @@ Vue.filter("currency", currencyFilter);
 
 Vue.config.productionTip = false;
 
-let app;
-store.dispatch("user/onAuthStateChanged", () => {
-  if (!app) {
-    app = new Vue({
-      router,
-      store,
-      i18n,
-      vuetify,
-      render: h => h(App)
-    }).$mount("#app");
-  }
-});
+// let app;
+// store.dispatch("user/onAuthStateChanged", () => {
+//   if (!app) {
+new Vue({
+  router,
+  store,
+  i18n,
+  vuetify,
+  render: h => h(App)
+}).$mount("#app");
+//   }
+// });
