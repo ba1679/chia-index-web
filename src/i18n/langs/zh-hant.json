@@ -4,7 +4,7 @@
 
   "__title": "chia",
 
-  "__store_center": "賣家中心",
+  "__store_backend_management": "賣家後台管理",
   "__download": "下載",
   "__store_pricing": "開店方案",
   "__follow_us": "追蹤我們",
@@ -35,6 +35,21 @@
   "__chia_copyright": "chia 版權所有",
   "__terms_of_services": "服務條款",
   "__privacy_policy": "隱私條款",
+
+  "__one_web_store_num_of_items":"總商品數",
+  "__one_web_store_num_of_chats":"粉絲人數",
+  "__one_web_store_join_time":"加入時間",
+  "__one_web_store_location":"地點",
+  "__one_web_store_payment":"支付方式",
+  "__one_web_store_shipping":"物流方式",
+  "__one_web_store_auto_reply_time":"自動回覆時間",
+  "__one_web_store_hot_item":"熱賣商品",
+  "__one_web_store_recommended_by_manager":"店長推薦",
+  "__one_web_store_new_item":"新品推薦",
+  "__one_web_store_comparison_table":"產品優勢",
+  "__one_web_store_comparison_table_our":"本商店產品",
+  "__one_web_store_comparison_table_A":"A品牌",
+  "__one_web_store_comparison_table_B":"B品牌",
 
 
   "__store_info_kol_recommend":"網紅聯名推薦",

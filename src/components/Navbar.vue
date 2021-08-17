@@ -8,10 +8,10 @@
       elevation="0"
       class="hidden-sm-and-down"
     >
-      <ul class="d-flex list-style-none">
+      <ul class="d-flex list-style-none pl-2">
         <li class="mr-2">
           <a href="https://store.chia-market.com/" target="_blank">{{
-            $t("__store_center")
+            $t("__store_backend_management")
           }}</a>
         </li>
         |
@@ -164,7 +164,7 @@
         <v-divider />
         <v-list-item link href="https://store.chia-market.com/" target="_blank">
           <v-list-item-title>
-            {{ $t("__store_center") }}
+            {{ $t("__store_backend_management") }}
           </v-list-item-title>
         </v-list-item>
         <v-list-item>

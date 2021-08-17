@@ -14,7 +14,7 @@
           :key="n"
           class="mr-2" 
         >
-        <v-card link max-width="250" class="ma-1 mt-2 relative" :to="{name:'SalesStoreInfo'}">
+        <v-card link max-width="250" class="ma-1 mt-2 relative" @click="toStoreInfo">
             <div class="store-badge" v-if="hot">
             TOP {{n}}
           </div>
@@ -44,7 +44,7 @@
       <v-row>
         <v-col v-for="n in 6"
         :key="n" cols="12">
-            <v-card link class="ma-1 mt-2 relative" :to="{name:'SalesStoreInfo'}">
+            <v-card link class="ma-1 mt-2 relative" @click="toStoreInfo">
               <div class="store-badge" v-if="hot">
               TOP {{n}}
             </div>
@@ -96,6 +96,11 @@ export default {
     hot:{
       type: Boolean,
       default: false
+    }
+  },
+  methods:{
+    toStoreInfo(){
+      this.$emit('toStoreInfo');
     }
   }
 }

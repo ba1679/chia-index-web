@@ -1,14 +1,14 @@
 <template>
-  <div class="store-info">
+  <div class="store-info" v-if="data">
     <div class="relative">
-      <v-img src="https://lorempixel.com/1200/900">
+      <v-img :src="data['media_urls']['background_image']">
         <!-- store intro -->
         <v-container>
           <v-row justify="center" class="text-center">
             <v-col class="store-intro" cols="12">
-              <h1 class="text-md-h3">零售店家名稱</h1>
+              <h1 class="text-md-h3">{{ data.name }}</h1>
               <p class="font-weight-bold">
-                歡迎光臨本商店，本店所有商品實物拍攝，質量保證，如需商品諮詢請隨時聯繫我們客服。祝大家在本店購物愉快
+                {{ data.description }}
               </p>
               <v-btn outlined color="white" class="font-weight-bold">
                 {{ $t("__shop_now") }} <v-icon>mdi-cart-arrow-right</v-icon>
@@ -25,7 +25,7 @@
           class="img-fluid"
           width="980"
           height="420"
-          src="https://www.youtube.com/embed/ecYFQpHeDnQ"
+          :src="youtubeLink"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -34,19 +34,33 @@
       </section>
       <!-- store infomation -->
       <!-- product intro -->
-      <ProductIntro />
+      <StoreIntro class="mb-8" />
       <!-- Q&A -->
-      <section class="mt-8">
+      <section class="mb-8">
         <v-row justify="center" align="center">
           <v-col :cols="isMobile ? 12 : 6">
-            <v-btn block dark elevation="0" color="blue darken-3">
+            <v-btn
+              block
+              dark
+              elevation="0"
+              color="blue darken-3"
+              :href="data.links.fb"
+              target="_blank"
+            >
               <v-icon class="mr-2">mdi-facebook</v-icon>Facebook
             </v-btn>
           </v-col>
         </v-row>
         <v-row justify="center" class="mt-0">
           <v-col :cols="isMobile ? 12 : 6">
-            <v-btn block dark elevation="0" color="pink">
+            <v-btn
+              block
+              dark
+              elevation="0"
+              color="pink"
+              :href="data.links.ig"
+              target="_blank"
+            >
               <v-icon class="mr-2">mdi-instagram</v-icon>Instagram
             </v-btn>
           </v-col>
@@ -54,15 +68,12 @@
         <v-row justify="center">
           <v-col :cols="isMobile ? 12 : 6">
             <v-expansion-panels>
-              <v-expansion-panel v-for="(item, i) in 5" :key="i">
+              <v-expansion-panel v-for="(item, i) in data.qa" :key="i">
                 <v-expansion-panel-header class="font-weight-bold">
-                  Q{{ item }} 保固方法與期限 ?
+                  Q{{ i + 1 }} {{ item.question }}
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  {{ item.answer }}
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -70,7 +81,7 @@
         </v-row>
       </section>
       <!-- recommend -->
-      <section class="mt-8">
+      <!-- <section class="mt-8">
         <h3 class="text-h4 text-center">
           {{ $t("__store_info_kol_recommend") }}
         </h3>
@@ -100,68 +111,57 @@
             </p>
           </div>
         </v-sheet>
-      </section>
+      </section> -->
       <!-- intro table -->
       <section class="mb-8">
         <h3 class="text-h4 text-center">
-          市場極致表現
+          {{ $t("__one_web_store_comparison_table") }}
         </h3>
         <table class="mx-auto compare-table text-left">
           <thead>
             <tr>
               <th></th>
-              <th>本產品</th>
-              <th>A公司</th>
-              <th>B公司</th>
+              <th>{{ $t("__one_web_store_comparison_table_our") }}</th>
+              <th>{{ $t("__one_web_store_comparison_table_A") }}</th>
+              <th>{{ $t("__one_web_store_comparison_table_B") }}</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>雙鏡頭對焦</th>
+            <tr v-for="(data, i) in tableData" :key="i">
+              <th>{{ data.feature.texts }}</th>
               <td class="our-style">
                 <span class="d-flex justify-space-between">
-                  快速對焦 不晃不模糊
-                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                  {{ data.our.texts }}
+                  <v-icon class="pl-2" color="primary" v-if="data.our.checked"
+                    >mdi-check-circle</v-icon
+                  >
                 </span>
               </td>
-              <td>比較項目描述 比較項目</td>
-              <td>比較項目描述 比較項目</td>
-            </tr>
-            <tr>
-              <th>NFC感應支付</th>
-              <td class="our-style">
+              <td>
                 <span class="d-flex justify-space-between">
-                  3s 以內
-                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                  {{ data.aStore.texts }}
+                  <v-icon
+                    class="pl-2"
+                    color="primary"
+                    v-if="data.aStore.checked"
+                    >mdi-check-circle</v-icon
+                  >
                 </span>
               </td>
-              <td>15 - 30 s</td>
-              <td>15 - 30 s</td>
-            </tr>
-            <tr>
-              <th>藍牙感測定位</th>
-              <td class="our-style">
+              <td>
                 <span class="d-flex justify-space-between">
-                  16cm
-                  <v-icon class="pl-2" color="primary">mdi-check-circle</v-icon>
+                  {{ data.bStore.texts }}
+                  <v-icon
+                    class="pl-2"
+                    color="primary"
+                    v-if="data.bStore.checked"
+                    >mdi-check-circle</v-icon
+                  >
                 </span>
               </td>
-              <td>20m 以上</td>
-              <td>20m 以上</td>
             </tr>
           </tbody>
         </table>
-      </section>
-      <!-- locatioin map -->
-      <section class="mb-8">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5849204944307!2d121.51372886382393!3d25.048156731639953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1627461025178!5m2!1szh-TW!2stw"
-          width="1200"
-          height="400"
-          style="border:0;"
-          allowfullscreen="true"
-          loading="lazy"
-        ></iframe>
       </section>
       <!-- customer service -->
       <section class="mt-8">
@@ -178,10 +178,7 @@
                   $t("__store_info_customer_service_law")
                 }}</v-list-item-title>
                 <v-list-item-content>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Nobis assumenda aliquam sunt vel cupiditate! Unde id,
-                  consectetur, ipsa ipsam quaerat dignissimos nesciunt, ducimus
-                  a aspernatur possimus nam repellat error temporibus!
+                  {{ data["customer_service_policy"]["terms_and_conditions"] }}
                 </v-list-item-content>
               </v-list-item-content>
             </v-list-item>
@@ -191,10 +188,7 @@
                   $t("__store_info_customer_service_return")
                 }}</v-list-item-title>
                 <v-list-item-content>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Nobis assumenda aliquam sunt vel cupiditate! Unde id,
-                  consectetur, ipsa ipsam quaerat dignissimos nesciunt, ducimus
-                  a aspernatur possimus nam repellat error temporibus!
+                  {{ data["customer_service_policy"]["return_policy"] }}
                 </v-list-item-content>
               </v-list-item-content>
             </v-list-item>
@@ -202,24 +196,116 @@
         </v-row>
       </section>
     </v-container>
+    <!-- locatioin map -->
+    <!-- <section>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5849204944307!2d121.51372886382393!3d25.048156731639953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1627461025178!5m2!1szh-TW!2stw"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen="true"
+        loading="lazy"
+      ></iframe>
+    </section> -->
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
-import ProductIntro from "@/components/sales/ProductIntro";
+import { consumerAPI } from "@/plugins/service";
+import StoreIntro from "@/components/sales/StoreIntro";
 
 export default {
   name: "StoreInfo",
   components: {
-    ProductIntro
+    StoreIntro
   },
   computed: {
     ...mapGetters({
-      isMobile: "isMobile"
-    })
+      isMobile: "isMobile",
+      data: "store/data",
+      itemIDs: "store/itemIDs"
+    }),
+    numOfItems() {
+      return this.itemIDs.length;
+    },
+    youtubeLink() {
+      const link = this.data["media_urls"]["introduction_youtube"];
+      const embedLink = link.replace("watch?v=", "embed/");
+      return embedLink;
+    },
+    tableData() {
+      let textLength = this.data.tables.comparison.texts.length / 4;
+      let comparisonTexts = this.data.tables.comparison.texts;
+      let comparisonChecked = this.data.tables.comparison.checked;
+      let texts = [];
+      for (let i = 0; i < textLength; i++) {
+        let textAry = [];
+        let checkedAry = [];
+        textAry = comparisonTexts.splice(0, 4);
+        checkedAry = comparisonChecked.splice(0, 4);
+        texts.push({
+          feature: {
+            texts: textAry[0],
+            checked: checkedAry[0]
+          },
+          our: {
+            texts: textAry[1],
+            checked: checkedAry[1]
+          },
+          aStore: {
+            texts: textAry[2],
+            checked: checkedAry[2]
+          },
+          bStore: {
+            texts: textAry[3],
+            checked: checkedAry[3]
+          }
+        });
+      }
+      return texts;
+    }
   },
   data() {
     return {};
+  },
+  methods: {
+    loadStore() {
+      this.$store.dispatch("setIsLoading", true);
+      return this.$store
+        .dispatch("store/fetchStore", this.$route.params.id)
+        .then(() => {
+          this.$store.dispatch("setIsLoading", false);
+        })
+        .catch(err => {
+          console.error(err);
+          this.$store.dispatch("setIsLoading", false);
+          this.$router.replace("/");
+        });
+    },
+    loadItem() {
+      consumerAPI
+        .getItems(["itemIDs"])
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getStoreAllItem() {
+      consumerAPI
+        .getStoreAllItemIDs(this.storeID)
+        .then(res => {
+          this.numOfItems = res["item_ids"].length;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  },
+  created() {
+    this.storeID = this.$route.params.id;
+    this.loadStore();
   }
 };
 </script>

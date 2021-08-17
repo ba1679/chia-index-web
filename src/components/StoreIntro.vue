@@ -73,24 +73,22 @@ export default {
   },
   computed: {
     ...mapGetters({
-      isMobile: "isMobile"
+      isMobile: "isMobile",
+      data: "store/data"
     })
-  },
-  props: {
-    storeName: {
-      type: String
-    },
-    storePhoto: {
-      type: String
-    }
   },
   data() {
     return {
       storeQrcodeLink: "https://www.chia-market.com/",
-      storeData: [
+      storeData: []
+    };
+  },
+  methods: {
+    updateStoreData() {
+      this.storeData.push(
         {
-          title: "粉絲人數",
-          content: "123",
+          title: this.$t("__one_web_store_num_of_chats"),
+          content: this.data["number_of_chats"],
           icon: "mdi-account-multiple-outline"
         },
         {
@@ -113,8 +111,16 @@ export default {
           content: "週一至週五 9:00~17:00",
           icon: "mdi-message-text-clock"
         }
-      ]
-    };
+      );
+    }
+  },
+  watch: {
+    data: {
+      immediate: true,
+      handler(val) {
+        if (val) this.updateStoreData();
+      }
+    }
   }
 };
 </script>

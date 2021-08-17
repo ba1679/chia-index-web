@@ -115,7 +115,11 @@
       src="https://cf.shopee.tw/file/b81648692a6302400d577b5c5a4cd83f_xxhdpi"
     ></v-img>
     <!-- recommend store -->
-    <StoreCard :title="'recommend'" :icon="'mdi-fire'" />
+    <StoreCard
+      :title="'recommend'"
+      :icon="'mdi-fire'"
+      @toStoreInfo="toSalesStoreInfo"
+    />
     <!-- hot store -->
     <StoreCard :title="'hot'" :hot="true" :icon="'mdi-account-group'" />
     <!-- items -->
@@ -185,6 +189,14 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    toSalesStoreInfo() {
+      this.$router.push({
+        name: "SalesStoreInfo",
+        params: { id: "MTaqxL0kX1JnBANKHGgo" }
+      });
+    }
   }
 };
 </script>
