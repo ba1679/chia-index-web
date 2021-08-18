@@ -43,6 +43,14 @@
   "__one_web_store_payment":"支付方式",
   "__one_web_store_shipping":"物流方式",
   "__one_web_store_auto_reply_time":"自動回覆時間",
+  "__one_web_store_auto_reply_time_weekday_0":"日",
+  "__one_web_store_auto_reply_time_weekday_1":"一",
+  "__one_web_store_auto_reply_time_weekday_2":"二",
+  "__one_web_store_auto_reply_time_weekday_3":"三",
+  "__one_web_store_auto_reply_time_weekday_4":"四",
+  "__one_web_store_auto_reply_time_weekday_5":"五",
+  "__one_web_store_auto_reply_time_weekday_6":"六",
+  
   "__one_web_store_hot_item":"熱賣商品",
   "__one_web_store_recommended_by_manager":"店長推薦",
   "__one_web_store_new_item":"新品推薦",
@@ -234,5 +242,6 @@
 
 
   "__register": "註冊",
-  "__sign_in": "登入"
+  "__sign_in": "登入",
+  "__close": "關閉"
 }
