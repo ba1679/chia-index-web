@@ -18,8 +18,8 @@
         </v-container>
       </v-img>
     </div>
-    <v-container class="text-center">
-      <!-- photo & video -->
+    <v-container class="text-center" v-if="youtubeLink">
+      <!-- video -->
       <section class="mb-8">
         <iframe
           class="img-fluid"
@@ -34,10 +34,10 @@
       </section>
       <!-- store infomation -->
       <!-- product intro -->
-      <StoreIntro class="mb-8" />
-      <!-- Q&A -->
+      <StoreIntro class="mb-8" @toStoreTelegramBot="toStoreTelegramBot" />
+      <!-- social links &  Q&A -->
       <section class="mb-8">
-        <v-row justify="center" align="center">
+        <v-row justify="center" align="center" v-if="data.links.fb">
           <v-col :cols="isMobile ? 12 : 6">
             <v-btn
               block
@@ -51,7 +51,7 @@
             </v-btn>
           </v-col>
         </v-row>
-        <v-row justify="center" class="mt-0">
+        <v-row justify="center" class="mt-0" v-if="data.links.ig">
           <v-col :cols="isMobile ? 12 : 6">
             <v-btn
               block
@@ -211,7 +211,6 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import { consumerAPI } from "@/plugins/service";
 import StoreIntro from "@/components/sales/StoreIntro";
 
 export default {
@@ -229,9 +228,13 @@ export default {
       return this.itemIDs.length;
     },
     youtubeLink() {
-      const link = this.data["media_urls"]["introduction_youtube"];
-      const embedLink = link.replace("watch?v=", "embed/");
-      return embedLink;
+      if(this.data["media_urls"]["introduction_youtube"]){
+        const link = this.data["media_urls"]["introduction_youtube"];
+        const embedLink = link.replace("watch?v=", "embed/");
+        return embedLink;
+      }else{
+        return null
+      }
     },
     tableData() {
       let textLength = this.data.tables.comparison.texts.length / 4;
@@ -265,9 +268,6 @@ export default {
       return texts;
     }
   },
-  data() {
-    return {};
-  },
   methods: {
     loadStore() {
       this.$store.dispatch("setIsLoading", true);
@@ -282,29 +282,11 @@ export default {
           this.$router.replace("/");
         });
     },
-    loadItem() {
-      consumerAPI
-        .getItems(["itemIDs"])
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    },
-    getStoreAllItem() {
-      consumerAPI
-        .getStoreAllItemIDs(this.storeID)
-        .then(res => {
-          this.numOfItems = res["item_ids"].length;
-        })
-        .catch(err => {
-          console.log(err);
-        });
+    toStoreTelegramBot(){
+      window.open(`http://t.me/${this.data.['telegram_bot_id']}`)
     }
   },
   created() {
-    this.storeID = this.$route.params.id;
     this.loadStore();
   }
 };
