@@ -21,9 +21,9 @@ const routes = [
         component: () => import("@/views/CategoriesHome/SalesHome.vue")
       },
       {
-        path: "/food-home",
-        name: "FoodHome",
-        component: () => import("@/views/CategoriesHome/FoodHome.vue")
+        path: "/catering-home",
+        name: "CateringHome",
+        component: () => import("@/views/CategoriesHome/CateringHome.vue")
       },
       {
         path: "service-home",
@@ -74,16 +74,14 @@ const routes = [
     ]
   },
   {
-    // :id
     path: "/sales-store-info/:id",
     name: "SalesStoreInfo",
     component: () => import("@/views/StoreInfo/SalesStoreInfo.vue")
   },
   {
-    // :id
-    path: "/food-store-info",
-    name: "FoodStoreInfo",
-    component: () => import("@/views/StoreInfo/FoodStoreInfo.vue")
+    path: "/catering-store-info/:id",
+    name: "CateringStoreInfo",
+    component: () => import("@/views/StoreInfo/CateringStoreInfo.vue")
   },
   {
     // :id

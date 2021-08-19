@@ -18,9 +18,9 @@
         </v-container>
       </v-img>
     </div>
-    <v-container class="text-center" v-if="youtubeLink">
+    <v-container class="text-center" >
       <!-- video -->
-      <section class="mb-8">
+      <section class="mb-8" v-if="youtubeLink">
         <iframe
           class="img-fluid"
           width="980"
