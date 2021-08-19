@@ -84,8 +84,7 @@ const routes = [
     component: () => import("@/views/StoreInfo/CateringStoreInfo.vue")
   },
   {
-    // :id
-    path: "/service-store-info",
+    path: "/service-store-info/:id",
     name: "ServiceStoreInfo",
     component: () => import("@/views/StoreInfo/ServiceStoreInfo.vue")
   },
