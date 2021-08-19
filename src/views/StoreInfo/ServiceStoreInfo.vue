@@ -11,7 +11,12 @@
               <p class="font-weight-bold pa-5">
                 {{ data.description }}
               </p>
-              <v-btn outlined color="white" class="font-weight-bold">
+              <v-btn
+                outlined
+                color="white"
+                class="font-weight-bold"
+                @click="toStoreTelegramBot"
+              >
                 {{ $t("__catering_book_now") }}
                 <v-icon>mdi-calendar-clock</v-icon>
               </v-btn>
@@ -35,15 +40,15 @@
         ></iframe>
       </section>
       <!-- items infomation -->
-      <ItemsAlbum :items="data.tables.services" />
+      <ItemsAlbum
+        :items="data.tables.services"
+        @toStoreTelegramBot="toStoreTelegramBot"
+      />
     </v-container>
     <!-- Second bg photo with store info -->
     <section>
       <v-img :src="data['media_urls']['background_image']" class="relative">
-        <StoreIntro
-          :storeName="'123美甲'"
-          :storePhoto="'https://img95.699pic.com/xsj/1n/k9/3h.jpg!/fh/300'"
-        />
+        <StoreIntro @toStoreTelegramBot="toStoreTelegramBot" />
       </v-img>
     </section>
     <v-container>
@@ -109,7 +114,7 @@
         </v-col>
       </v-row>
       <!-- project intro -->
-      <ProjectIntro class="mt-8" />
+      <ProjectIntro class="mt-8" @toStoreTelegramBot="toStoreTelegramBot" />
       <!-- recommend -->
       <section class="mt-8">
         <h3 class="text-h4 text-center">
@@ -174,7 +179,8 @@ export default {
   computed: {
     ...mapGetters({
       isMobile: "isMobile",
-      data: "store/data"
+      data: "store/data",
+
     }),
     youtubeLink() {
       if(this.data["media_urls"]["introduction_youtube"]){

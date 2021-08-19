@@ -127,7 +127,6 @@ export default {
   methods: {
     updateStoreData() {
       this.storeData = [
-
         {
           title: this.$t("__one_web_store_num_of_chats"),
           content: this.data["number_of_chats"],
@@ -153,7 +152,7 @@ export default {
       ]
 
     },
-     toStoreTelegramBot(){
+    toStoreTelegramBot(){
       this.$emit('toStoreTelegramBot');
     },
     formatAddress(address) {
