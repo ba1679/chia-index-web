@@ -261,7 +261,4 @@ export default {
     border-right: 5px solid transparent;
   }
 }
-.text-wrap {
-  white-space: normal;
-}
 </style>
