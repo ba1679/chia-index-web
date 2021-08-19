@@ -14,7 +14,7 @@
                 店家環境日式簡約,搭配櫻花樹來點綴店內環境,給您不一樣的感覺,熱蠟美肌提供隱密性的空間,讓您無負擔.全新開幕,乾淨舒適的環境,提供美甲,美睫,飄眉,熱蠟美肌的服務,歡迎詢問
               </p>
               <v-btn outlined color="white" class="font-weight-bold">
-                {{ $t("__food_book_now") }}
+                {{ $t("__catering_book_now") }}
                 <v-icon>mdi-calendar-clock</v-icon>
               </v-btn>
             </v-col>

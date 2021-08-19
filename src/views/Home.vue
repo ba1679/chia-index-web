@@ -14,7 +14,7 @@
             dark
             color="purple lighten-2"
             class="mr-2"
-            :to="{ name: 'FoodHome' }"
+            :to="{ name: 'CateringHome' }"
             >餐飲</v-btn
           >
           <v-btn
