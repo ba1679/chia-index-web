@@ -4,12 +4,9 @@ export const state = {
   id: "",
   data: null,
   categories: [],
+  categoryItems: [],
   itemIDs: [],
-  items: [],
-  messengers: [], // { id, data, enabled}
-  paymentMethodDatas: [],
-  shippingChannelDatas: [],
-  autoReplyOrderTime: null
+  items: []
 };
 export const getters = {
   id(state) {
@@ -21,6 +18,9 @@ export const getters = {
   categories(state) {
     return state.categories;
   },
+  categoryItems(state) {
+    return state.categoryItems;
+  },
   items(state) {
     return state.items;
   },
@@ -29,27 +29,6 @@ export const getters = {
   },
   messengers(state) {
     return state.messengers;
-  },
-  messengerTelegramBotData(state) {
-    const found = state.messengers.find(s => s.id == "telegram_bot");
-    if (found) {
-      return found.data;
-    }
-    return null;
-  },
-  messengerEnabledTelegramBot(state) {
-    const found = state.messengers.find(s => s.id == "telegram_bot");
-    if (found) {
-      return found.enabledData;
-    }
-    return null;
-  },
-  messengerTelegramBotEnabled(state) {
-    const found = state.messengers.find(s => s.id == "telegram_bot");
-    if (found) {
-      return !!found.enabledData;
-    }
-    return false;
   },
   paymentMethodDatas(state) {
     return state.paymentMethodDatas;
@@ -103,10 +82,19 @@ export const mutations = {
   CLEAR_CATEGORIES(state) {
     state.categories = [];
   },
+  CLEAR_CATEGORY_ITEMS(state) {
+    state.categoryItems = [];
+  },
   PUSH_CATEGORY(state, { id, data }) {
     const foundIndex = state.categories.findIndex(s => s.id == id);
     if (foundIndex >= 0) state.categories.splice(foundIndex, 1, { id, data });
     else state.categories.push({ id, data });
+  },
+  PUSH_CATEGORY_ITEMS(state, { id, data }) {
+    const foundIndex = state.categoryItems.findIndex(s => s.id == id);
+    if (foundIndex >= 0)
+      state.categoryItems.splice(foundIndex, 1, { id, data });
+    else state.categoryItems.push({ id, data });
   },
   CLEAR_MESSENGERS(state) {
     state.messengers = [];
@@ -115,27 +103,6 @@ export const mutations = {
     const foundIndex = state.messengers.findIndex(s => s.id == id);
     if (foundIndex >= 0) state.messengers.splice(foundIndex, 1, { id, data });
     else state.messengers.push({ id, data, enabledData: null });
-  },
-  CLEAR_PAYMENT_METHOD_DATAS(state) {
-    state.paymentMethodDatas = [];
-  },
-  PUSH_PAYMENT_METHOD_DATA(state, { id, data }) {
-    const foundIndex = state.paymentMethodDatas.findIndex(s => s.id == id);
-    if (foundIndex >= 0)
-      state.paymentMethodDatas.splice(foundIndex, 1, { id, data });
-    else state.paymentMethodDatas.push({ id, data });
-  },
-  CLEAR_SHIPPING_CHANNEL_DATAS(state) {
-    state.shippingChannelDatas = [];
-  },
-  PUSH_SHIPPING_CHANNEL_DATA(state, { id, data }) {
-    const foundIndex = state.shippingChannelDatas.findIndex(s => s.id == id);
-    if (foundIndex >= 0)
-      state.shippingChannelDatas.splice(foundIndex, 1, { id, data });
-    else state.shippingChannelDatas.push({ id, data });
-  },
-  SET_AUTO_REPLY_ORDER_TIME(state, data) {
-    state.autoReplyOrderTime = data;
   }
 };
 export const actions = {
@@ -180,10 +147,67 @@ export const actions = {
         .catch(err => reject("get item ids error " + err));
     });
   },
-  getItems(_, itemID) {
+  getStoreAllCategoryIDs({ getters, dispatch }) {
+    const storeID = getters.id;
     return new Promise((resolve, reject) => {
       consumerAPI
-        .getItems(itemID)
+        .getStoreAllCategoryIDs(storeID)
+        .then(res => {
+          dispatch("getStoreCategories", res["category_ids"]);
+          resolve(res);
+        })
+        .catch(err => reject("get store all category ids error " + err));
+    });
+  },
+  getStoreCategories({ commit, getters }, categoryIDs) {
+    const storeID = getters.id;
+    return new Promise((resolve, reject) => {
+      consumerAPI
+        .getStoreCategories(storeID, categoryIDs)
+        .then(res => {
+          commit("CLEAR_CATEGORIES");
+          for (const categoryID of res.category_ids) {
+            commit("PUSH_CATEGORY", {
+              id: categoryID,
+              data: res.categories[categoryID]
+            });
+          }
+          resolve(res);
+        })
+        .catch(err => reject("get store categories error " + err));
+    });
+  },
+  getStoreCategoryAllItemIDs({ getters, dispatch }, categoryID) {
+    const storeID = getters.id;
+    return new Promise((resolve, reject) => {
+      consumerAPI
+        .getStoreCategoryAllItemIDs(storeID, categoryID)
+        .then(res => {
+          dispatch("getCategoryItems", res["item_ids"]);
+          resolve(res);
+        })
+        .catch(err => reject("get store category all item ids error " + err));
+    });
+  },
+  getCategoryItems({ dispatch, commit }, itemIDs) {
+    dispatch("getItems", itemIDs)
+      .then(res => {
+        commit("CLEAR_CATEGORY_ITEMS");
+        for (const itemID of res["item_ids"]) {
+          commit("PUSH_CATEGORY_ITEMS", {
+            id: itemID,
+            data: res.items[itemID]
+          });
+        }
+      })
+      .catch(err => {
+        console.log("get store category items error " + err);
+      });
+  },
+  getItems(_, itemIDs) {
+    return new Promise((resolve, reject) => {
+      consumerAPI
+        .getItems(itemIDs)
         .then(res => {
           resolve(res);
         })

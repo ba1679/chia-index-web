@@ -126,7 +126,7 @@ export default {
   },
   methods: {
     updateStoreData() {
-      this.storeData.push(
+      this.storeData = [
         {
           title: this.$t("__one_web_store_num_of_chats"),
           content: this.data["number_of_chats"],
@@ -149,9 +149,10 @@ export default {
           content: this.data["payment_methods"].join("、"),
           icon: "mdi-cash-usd-outline"
         }
-      );
+      ]
+
     },
-     toStoreTelegramBot(){
+    toStoreTelegramBot(){
       this.$emit('toStoreTelegramBot');
     },
     formatAddress(address) {

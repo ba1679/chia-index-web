@@ -10,40 +10,39 @@
           background-color="white"
           color="primary"
         >
-          <v-btn>
-            美甲
-          </v-btn>
-          <v-btn>
-            美睫
-          </v-btn>
-
-          <v-btn>
-            霧眉
-          </v-btn>
-
-          <v-btn>
-            做臉
+          <v-btn
+            v-for="category in categories"
+            :key="category.id"
+            :value="category.id"
+          >
+            {{ category.data.name }}
           </v-btn>
         </v-btn-toggle>
-        <v-btn color="primary" small text class="ml-2">{{
-          $t("__service__store_info_more_service")
-        }}</v-btn>
+        <v-btn
+          color="primary"
+          small
+          text
+          class="ml-2"
+          @click="toStoreTelegramBot"
+          >{{ $t("__service__store_info_more_service") }}</v-btn
+        >
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col :cols="isMobile ? 12 : 3" v-for="i in 3" :key="i">
+      <v-col
+        :cols="isMobile ? 12 : 3"
+        v-for="item in categoryItems"
+        :key="item.id"
+      >
         <v-card flat>
-          <v-card-title class="justify-center"> 服務項目{{ i }} </v-card-title>
+          <v-card-title class="justify-center">{{
+            item.data.name
+          }}</v-card-title>
           <v-card-text class="text-center">
-            <div class="text-h4 mb-3">
-              NT$ 500
-            </div>
-            <p>
-              光療指甲又可稱為凝膠指甲，材質是天然樹脂，照LED燈後會硬化，可以強化指甲、矯正指形、彩繪。
-            </p>
+            <p v-html="item.data.introduction"></p>
           </v-card-text>
           <v-card-actions>
-            <v-btn block dark color="primary">{{
+            <v-btn block dark color="primary" @click="toStoreTelegramBot">{{
               $t("__service__store_info_go_book")
             }}</v-btn>
           </v-card-actions>
@@ -59,13 +58,45 @@ export default {
   name: "ProjectIntro",
   computed: {
     ...mapGetters({
-      isMobile: "isMobile"
+      isMobile: "isMobile",
+      categories: "store/categories",
+      categoryItems: "store/categoryItems"
     })
   },
   data() {
     return {
-      serviceSelect: 0
+      serviceSelect: null,
+      categoryItemsData: []
     };
+  },
+  methods: {
+    loadCategoryAllItems() {
+      return this.$store
+        .dispatch("store/getStoreCategoryAllItemIDs", this.serviceSelect)
+        .then(() => {})
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    toStoreTelegramBot() {
+      this.$emit("toStoreTelegramBot");
+    }
+  },
+  watch: {
+    categories: {
+      immediate: true,
+      handler(val) {
+        if (val.length) {
+          this.serviceSelect = val[0].id;
+        }
+      }
+    },
+    serviceSelect: {
+      immediate: true,
+      handler(val) {
+        if (val) this.loadCategoryAllItems();
+      }
+    }
   }
 };
 </script>

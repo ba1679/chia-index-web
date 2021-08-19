@@ -6,7 +6,12 @@
         v-for="item in itemData"
         :key="item.name"
       >
-        <v-card flat link class="relative item-card">
+        <v-card
+          flat
+          link
+          class="relative item-card"
+          @click="toStoreTelegramBot"
+        >
           <v-img class="item-bg" :src="item.photoUrl"></v-img>
           <div class="overlay-bg d-flex flex-column justify-center">
             <h3 class="text-sm-h4">{{ item.name }}</h3>
@@ -53,6 +58,9 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    toStoreTelegramBot() {
+      this.$emit("toStoreTelegramBot");
     }
   },
   created() {
