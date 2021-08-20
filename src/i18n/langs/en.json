@@ -47,6 +47,8 @@
   "__store_info_customer_service_law": "Terms & Conditions",
   "__store_info_customer_service_return": "Returns & Refunds",
 
+  "__store_info_service_fee":"Service fee",
+
   "__store_info_book_service": "Book online",
   "__store_info_open_time": "Open time",
   "__store_info_hold_reservation": "Hold reservation",
