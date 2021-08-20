@@ -160,7 +160,7 @@ export default {
       data: "store/data",
       itemIDs: "store/itemIDs"
     }),
-     telegramBotLink() {
+    telegramBotLink() {
       return `http://t.me/${this.data.['telegram_bot_id']}`
     },
   },
@@ -267,7 +267,7 @@ export default {
   border-bottom-right-radius: 3px;
   &::before {
     content: "";
-    background-color: orange;
+    background-color: #c07c39;
     position: absolute;
     left: 0;
     bottom: -3px;
