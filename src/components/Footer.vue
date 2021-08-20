@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer mt-8">
     <v-footer dark padless>
       <v-card flat tile dark class="primary text-center" width="100%">
         <v-card-text>
