@@ -96,6 +96,14 @@ export default {
       handler(val) {
         if (val) this.loadCategoryAllItems();
       }
+    },
+    categoryItems: {
+      immediate: true,
+      handler(val) {
+        if (val.length > 3) {
+          val.splice(3, val.length);
+        }
+      }
     }
   }
 };
