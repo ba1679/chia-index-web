@@ -115,6 +115,9 @@ export const actions = {
             dispatch("getItemIDs");
           })
           .then(() => {
+            dispatch("getStoreAllCategoryIDs");
+          })
+          .then(() => {
             resolve();
           })
           .catch(err => {
