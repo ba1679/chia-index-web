@@ -157,7 +157,8 @@ export default {
   computed: {
     ...mapGetters({
       isMobile: "isMobile",
-      data: "store/data"
+      data: "store/data",
+      itemIDs: "store/itemIDs"
     }),
      telegramBotLink() {
       return `http://t.me/${this.data.['telegram_bot_id']}`
@@ -167,7 +168,7 @@ export default {
     return {
       storeData:[],
       recommendedItemsData:[],
-      autoReplyTimeDialogShow: false
+      autoReplyTimeDialogShow: false,
     };
   },
   methods:{
@@ -178,6 +179,7 @@ export default {
           content: this.data["number_of_chats"],
           icon: "mdi-account-multiple-outline"
         },
+
         {
           title: this.$t('__one_web_store_join_time'),
           content: format(new Date(this.data["create_time"]),"yyyy/MM/dd"),
@@ -235,6 +237,18 @@ export default {
         if (val) {
           this.updateStoreData();
           this.loadRecommendedItems()
+        }
+      }
+    },
+    itemIDs:{
+      immediate: true,
+      handler(val){
+        if(val.length){
+          this.storeData.unshift({
+          title: this.$t('__one_web_store_num_of_items'),
+          content:val.length,
+          icon: "mdi-package-variant",
+        },)
         }
       }
     }
