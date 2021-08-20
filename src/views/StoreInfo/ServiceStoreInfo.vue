@@ -13,7 +13,7 @@
 </template>
 <script>
 import ProjectIntro from "@/components/service/ProjectIntro";
-import StoreOnePageWeb from "@/components/StoreOnePageWeb";
+import StoreOnePageWeb from "@/components/onePageWeb/StoreOnePageWeb";
 
 export default {
   name: "ServiceStoreInfo",

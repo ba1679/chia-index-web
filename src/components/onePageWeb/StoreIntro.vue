@@ -100,7 +100,7 @@
 import { mapGetters } from "vuex";
 import format from "date-fns/format";
 import QrcodeVue from "qrcode.vue";
-import AutoReplyTimeDialog from "@/components/AutoReplyTimeDialog";
+import AutoReplyTimeDialog from "@/components/onePageWeb/AutoReplyTimeDialog";
 
 export default {
   name: "StoreIntro",

@@ -127,8 +127,8 @@
   </div>
 </template>
 <script>
-import StoreCard from "@/components/StoreCard";
-import ItemCard from "@/components/ItemCard";
+import StoreCard from "@/components/home/StoreCard";
+import ItemCard from "@/components/home/ItemCard";
 
 export default {
   name: "ServiceHome",

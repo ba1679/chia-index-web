@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import StoreOnePageWeb from "@/components/StoreOnePageWeb";
+import StoreOnePageWeb from "@/components/onePageWeb/StoreOnePageWeb";
 
 export default {
   name: "CateringStoreInfo",

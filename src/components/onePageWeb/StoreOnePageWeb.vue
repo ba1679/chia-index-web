@@ -179,8 +179,8 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import StoreIntro from "@/components/StoreIntro";
-import ItemsAlbum from "@/components/ItemsAlbum";
+import StoreIntro from "@/components/onePageWeb/StoreIntro";
+import ItemsAlbum from "@/components/onePageWeb/ItemsAlbum";
 
 export default {
   name: "StoreOnePageWeb",
