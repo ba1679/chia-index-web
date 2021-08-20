@@ -70,7 +70,12 @@
       </v-row>
       <v-row v-if="recommendedItemsData.length">
         <v-col :cols="isMobile ? 12 : 4">
-          <v-card link class="ma-1 text-center" flat>
+          <v-card
+            link
+            class="ma-1 text-center"
+            flat
+            @click="toStoreTelegramBot"
+          >
             <v-img contain :src="recommendedItemsData[0].photoUrl"></v-img>
             <div class="item-tag">
               {{ this.$t("__one_web_store_hot_item") }}
@@ -91,7 +96,12 @@
           </v-card>
         </v-col>
         <v-col :cols="isMobile ? 12 : 4">
-          <v-card link class="ma-1 text-center" flat>
+          <v-card
+            link
+            class="ma-1 text-center"
+            flat
+            @click="toStoreTelegramBot"
+          >
             <v-img cover :src="recommendedItemsData[1].photoUrl"></v-img>
             <div class="item-tag">
               {{ this.$t("__one_web_store_recommended_by_manager") }}
@@ -112,7 +122,12 @@
           </v-card>
         </v-col>
         <v-col :cols="isMobile ? 12 : 4">
-          <v-card link class="ma-1 text-center" flat>
+          <v-card
+            link
+            class="ma-1 text-center"
+            flat
+            @click="toStoreTelegramBot"
+          >
             <v-img contain :src="recommendedItemsData[2].photoUrl"></v-img>
             <div class="item-tag">
               {{ this.$t("__one_web_store_new_item") }}
@@ -145,7 +160,7 @@
 <script>
 import QrcodeVue from "qrcode.vue";
 import format from "date-fns/format";
-import AutoReplyTimeDialog from "@/components/AutoReplyTimeDialog"
+import AutoReplyTimeDialog from "@/components/onePageWeb/AutoReplyTimeDialog"
 import { mapGetters } from "vuex";
 
 export default {
