@@ -1,7 +1,9 @@
 <template>
   <div>
     <v-divider />
-    <h3 class="text-h4 text-center py-3">服務方案</h3>
+    <h3 class="text-h4 text-center py-3">
+      {{ $t("__store_info_service_fee") }}
+    </h3>
     <v-divider />
     <v-row justify="center" class="mt-3">
       <v-col :cols="isMobile ? 12 : 5" class="text-center">

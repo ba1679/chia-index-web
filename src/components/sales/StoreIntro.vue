@@ -70,7 +70,12 @@
       </v-row>
       <v-row v-if="recommendedItemsData.length">
         <v-col :cols="isMobile ? 12 : 4">
-          <v-card link class="ma-1 text-center" flat>
+          <v-card
+            link
+            class="ma-1 text-center"
+            flat
+            @click="toStoreTelegramBot"
+          >
             <v-img contain :src="recommendedItemsData[0].photoUrl"></v-img>
             <div class="item-tag">
               {{ this.$t("__one_web_store_hot_item") }}
@@ -91,7 +96,12 @@
           </v-card>
         </v-col>
         <v-col :cols="isMobile ? 12 : 4">
-          <v-card link class="ma-1 text-center" flat>
+          <v-card
+            link
+            class="ma-1 text-center"
+            flat
+            @click="toStoreTelegramBot"
+          >
             <v-img cover :src="recommendedItemsData[1].photoUrl"></v-img>
             <div class="item-tag">
               {{ this.$t("__one_web_store_recommended_by_manager") }}
@@ -112,7 +122,12 @@
           </v-card>
         </v-col>
         <v-col :cols="isMobile ? 12 : 4">
-          <v-card link class="ma-1 text-center" flat>
+          <v-card
+            link
+            class="ma-1 text-center"
+            flat
+            @click="toStoreTelegramBot"
+          >
             <v-img contain :src="recommendedItemsData[2].photoUrl"></v-img>
             <div class="item-tag">
               {{ this.$t("__one_web_store_new_item") }}
@@ -145,7 +160,7 @@
 <script>
 import QrcodeVue from "qrcode.vue";
 import format from "date-fns/format";
-import AutoReplyTimeDialog from "@/components/AutoReplyTimeDialog"
+import AutoReplyTimeDialog from "@/components/onePageWeb/AutoReplyTimeDialog"
 import { mapGetters } from "vuex";
 
 export default {
@@ -157,9 +172,10 @@ export default {
   computed: {
     ...mapGetters({
       isMobile: "isMobile",
-      data: "store/data"
+      data: "store/data",
+      itemIDs: "store/itemIDs"
     }),
-     telegramBotLink() {
+    telegramBotLink() {
       return `http://t.me/${this.data.['telegram_bot_id']}`
     },
   },
@@ -167,7 +183,7 @@ export default {
     return {
       storeData:[],
       recommendedItemsData:[],
-      autoReplyTimeDialogShow: false
+      autoReplyTimeDialogShow: false,
     };
   },
   methods:{
@@ -178,6 +194,7 @@ export default {
           content: this.data["number_of_chats"],
           icon: "mdi-account-multiple-outline"
         },
+
         {
           title: this.$t('__one_web_store_join_time'),
           content: format(new Date(this.data["create_time"]),"yyyy/MM/dd"),
@@ -237,6 +254,18 @@ export default {
           this.loadRecommendedItems()
         }
       }
+    },
+    itemIDs:{
+      immediate: true,
+      handler(val){
+        if(val.length){
+          this.storeData.unshift({
+          title: this.$t('__one_web_store_num_of_items'),
+          content:val.length,
+          icon: "mdi-package-variant",
+        },)
+        }
+      }
     }
   }
 };
@@ -253,7 +282,7 @@ export default {
   border-bottom-right-radius: 3px;
   &::before {
     content: "";
-    background-color: orange;
+    background-color: #c07c39;
     position: absolute;
     left: 0;
     bottom: -3px;

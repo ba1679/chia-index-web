@@ -18,7 +18,7 @@
         </v-container>
       </v-img>
     </div>
-    <v-container class="text-center" >
+    <v-container class="text-center">
       <!-- video -->
       <section class="mb-8" v-if="youtubeLink">
         <iframe
@@ -214,7 +214,7 @@ import { mapGetters } from "vuex";
 import StoreIntro from "@/components/sales/StoreIntro";
 
 export default {
-  name: "StoreInfo",
+  name: "SalesStoreInfo",
   components: {
     StoreIntro
   },
@@ -222,11 +222,8 @@ export default {
     ...mapGetters({
       isMobile: "isMobile",
       data: "store/data",
-      itemIDs: "store/itemIDs"
+
     }),
-    numOfItems() {
-      return this.itemIDs.length;
-    },
     youtubeLink() {
       if(this.data["media_urls"]["introduction_youtube"]){
         const link = this.data["media_urls"]["introduction_youtube"];
@@ -288,7 +285,7 @@ export default {
   },
   created() {
     this.loadStore();
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
