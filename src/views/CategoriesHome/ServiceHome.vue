@@ -194,7 +194,7 @@ export default {
     toServiceStoreInfo() {
       this.$router.push({
         name: "ServiceStoreInfo",
-        params: { id: "MTaqxL0kX1JnBANKHGgo" }
+        params: { id: "chatroom_store_test_bot" }
       });
     }
   }

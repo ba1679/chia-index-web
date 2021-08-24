@@ -194,7 +194,7 @@ export default {
     toCateringStoreInfo() {
       this.$router.push({
         name: "CateringStoreInfo",
-        params: { id: "MTaqxL0kX1JnBANKHGgo" }
+        params: { id: "chatroom_store_test_bot" }
       });
     }
   }

@@ -74,17 +74,17 @@ const routes = [
     ]
   },
   {
-    path: "/sales-store-info/:id",
+    path: "/sales-store/:id",
     name: "SalesStoreInfo",
     component: () => import("@/views/StoreInfo/SalesStoreInfo.vue")
   },
   {
-    path: "/catering-store-info/:id",
+    path: "/catering-store/:id",
     name: "CateringStoreInfo",
     component: () => import("@/views/StoreInfo/CateringStoreInfo.vue")
   },
   {
-    path: "/service-store-info/:id",
+    path: "/service-store/:id",
     name: "ServiceStoreInfo",
     component: () => import("@/views/StoreInfo/ServiceStoreInfo.vue")
   },

@@ -18,6 +18,7 @@ export const call = function(api, data = {}) {
 };
 
 export {
+  getStoreIDByTelegramBotID,
   getStores,
   getStoreAllCategoryIDs,
   getStoreCategories,

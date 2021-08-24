@@ -106,11 +106,13 @@ export const mutations = {
   }
 };
 export const actions = {
-  fetchStore({ commit, dispatch }, id) {
+  fetchStore({ dispatch }, telegramBotID) {
     return new Promise((resolve, reject) => {
-      if (id) {
-        commit("SET_STORE_ID", id);
-        return dispatch("getStores")
+      if (telegramBotID) {
+        return dispatch("getStoreIDByTelegramBotID", telegramBotID)
+          .then(() => {
+            dispatch("getStores");
+          })
           .then(() => {
             dispatch("getItemIDs");
           })
@@ -124,6 +126,17 @@ export const actions = {
             reject(err);
           });
       }
+    });
+  },
+  getStoreIDByTelegramBotID({ commit }, telegramBotID) {
+    return new Promise((resolve, reject) => {
+      consumerAPI
+        .getStoreIDByTelegramBotID(telegramBotID)
+        .then(res => {
+          commit("SET_STORE_ID", res["store_id"]);
+          resolve();
+        })
+        .catch(err => reject("get store ID by telegram bot ID error " + err));
     });
   },
   getStores({ getters, commit }) {

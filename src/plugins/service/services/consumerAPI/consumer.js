@@ -1,6 +1,17 @@
 import { call } from ".";
 
 /**
+ * get store ID by telegram bot ID
+ * @param {string} telegramBotID
+ * @returns {Promise<Object>} telegram_bot_id, store_id
+ */
+const getStoreIDByTelegramBotID = function(telegramBotID) {
+  return call("getStoreIDByTelegramBotID", {
+    telegram_bot_id: telegramBotID
+  });
+};
+
+/**
  * get stores
  * @param {array} storeIDs
  * @returns {Promise<Object>} store_ids and stores
@@ -71,6 +82,7 @@ const getItems = function(itemIDs) {
 };
 
 export {
+  getStoreIDByTelegramBotID,
   getStores,
   getStoreAllCategoryIDs,
   getStoreCategories,
