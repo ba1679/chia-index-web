@@ -194,7 +194,8 @@ export default {
     toSalesStoreInfo() {
       this.$router.push({
         name: "SalesStoreInfo",
-        params: { id: "MTaqxL0kX1JnBANKHGgo" }
+        // telegram bot id
+        params: { id: "chatroom_store_test_bot" }
       });
     }
   }
