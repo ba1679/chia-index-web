@@ -86,6 +86,16 @@ const routes = [
         path: "orders",
         name: "UserOrdersMobile",
         component: () => import("@/views/UserMobile/UserOrdersMobile.vue")
+      },
+      {
+        path: "profile-setting",
+        name: "UserProfileSetting",
+        component: () => import("@/views/UserMobile/UserProfileSetting.vue")
+      },
+      {
+        path: "address-setting",
+        name: "UserAddressSetting",
+        component: () => import("@/views/UserMobile/UserAddressSetting.vue")
       }
     ]
   },
