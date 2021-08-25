@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import { auth } from '@/plugins/firebase'
 
 Vue.use(VueRouter);
 const originalPush = VueRouter.prototype.push;
@@ -21,7 +20,7 @@ const routes = [
         component: () => import("@/views/CategoriesHome/SalesHome.vue")
       },
       {
-        path: "/catering-home",
+        path: "catering-home",
         name: "CateringHome",
         component: () => import("@/views/CategoriesHome/CateringHome.vue")
       },
@@ -52,14 +51,14 @@ const routes = [
         component: () => import("@/views/User/UserProfileForm.vue")
       },
       {
-        path: "/purchase-lists",
-        name: "UserPurchaseLists",
-        component: () => import("@/views/User/UserPurchaseLists.vue")
+        path: "/order-list",
+        name: "UserOrders",
+        component: () => import("@/views/User/UserOrders.vue")
       },
       {
-        path: "/purchase-list/:id",
-        name: "PurchaseList",
-        component: () => import("@/views/PurchaseList/PurchaseList.vue")
+        path: "/order-list/:id",
+        name: "Order",
+        component: () => import("@/views/User/Order.vue")
       },
       {
         path: "/address",
@@ -70,6 +69,23 @@ const routes = [
         path: "/payment",
         name: "UserPayment",
         component: () => import("@/views/User/UserPayment.vue")
+      }
+    ]
+  },
+  // consumer page mobile
+  {
+    path: "/mobile/user-account",
+    component: () => import("@/views/UserMobile/UserMobilePage.vue"),
+    children: [
+      {
+        path: "/",
+        name: "userAccountMobile",
+        component: () => import("@/views/UserMobile/UserAccountMobile.vue")
+      },
+      {
+        path: "orders",
+        name: "UserOrdersMobile",
+        component: () => import("@/views/UserMobile/UserOrdersMobile.vue")
       }
     ]
   },
