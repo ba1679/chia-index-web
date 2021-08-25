@@ -96,6 +96,11 @@ const routes = [
         path: "address-setting",
         name: "UserAddressSetting",
         component: () => import("@/views/UserMobile/UserAddressSetting.vue")
+      },
+      {
+        path: "payment-setting",
+        name: "UserPaymentSetting",
+        component: () => import("@/views/UserMobile/UserPaymentSetting.vue")
       }
     ]
   },

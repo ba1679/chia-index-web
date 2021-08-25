@@ -2,7 +2,7 @@
   <div>
     <v-sheet
       class="pa-2 d-flex align-center"
-      :class="{ 'justify-space-around': actionText }"
+      :class="{ 'justify-space-between': actionText }"
     >
       <router-link :to="backPath">
         <v-icon>mdi-chevron-left</v-icon>

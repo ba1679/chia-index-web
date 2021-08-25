@@ -46,6 +46,7 @@
           class="d-flex flex-column"
           v-for="setting in profileSetting"
           :key="setting.icon"
+          @click="toPage(setting.to)"
         >
           <v-icon large :color="setting.color">{{ setting.icon }}</v-icon>
           <div>{{ setting.title }}</div>
@@ -93,17 +94,20 @@ export default {
         {
           icon: "mdi-account-edit-outline",
           title: "帳號資訊",
-          color: "green"
+          color: "green",
+          to: { name: "UserProfileSetting" }
         },
         {
           icon: "mdi-map-marker-radius-outline",
           title: "收件地址",
-          color: "orange"
+          color: "orange",
+          to: { name: "UserAddressSetting" }
         },
         {
           icon: "mdi-cash-lock",
           title: "支付管理",
-          color: "red lighten-2"
+          color: "red lighten-2",
+          to: { name: "UserPaymentSetting" }
         }
       ],
       otherInfo: [
@@ -123,6 +127,9 @@ export default {
   methods: {
     toOrders() {
       this.$router.push({ name: "UserOrdersMobile" });
+    },
+    toPage(path) {
+      this.$router.push(path);
     }
   }
 };
