@@ -1,20 +1,15 @@
 <template>
   <v-container class="bg-white h-100 px-5">
-    <v-row justify="space-between" align="center" class="mb-2">
-      <v-col cols="3">
-        <v-btn text color="primary">
-          <v-icon class="mr-2">mdi-arrow-left-bold-circle-outline</v-icon>
-          回上頁
-        </v-btn>
-      </v-col>
-      <v-col cols="6" class="text-right">
-        訂單編號: 1234567 |
-        <span class="orange--text font-weight-bold">已完成</span>
-      </v-col>
-    </v-row>
-    <div class="stepper d-flex">
-      <div class="stepper_step"></div>
-    </div>
+    <v-tabs fixed-tabs>
+      <v-tab v-for="tab in tabList" :key="tab">{{ tab }}</v-tab>
+    </v-tabs>
+    <v-text-field
+      dense
+      filled
+      class="mt-5"
+      prepend-inner-icon="mdi-card-search"
+      label="您可以透過賣家名稱、訂單編號、商品名稱搜尋"
+    />
     <v-card
       flat
       outlined
@@ -63,9 +58,10 @@
 </template>
 <script>
 export default {
-  name: "PurchaseList",
+  name: "UserPurchaseLists",
   data() {
     return {
+      tabList: ["全部", "待付款", "待出貨", "待收貨", "完成", "已取消"],
       orderData: [
         {
           id: "123465789",
@@ -88,9 +84,36 @@ export default {
             }
           ],
           totalPrice: 230
+        },
+        {
+          id: "223456875",
+          storeName: "555店家",
+          status: "完成",
+          items: [
+            {
+              id: "1111",
+              name: "商品1",
+              photoUrl: "https://lorempixel.com/800/400/",
+              qty: 3,
+              price: 10
+            },
+            {
+              id: "22222",
+              name: "商品2",
+              photoUrl: "https://lorempixel.com/700/500/",
+              qty: 10,
+              price: 20
+            }
+          ],
+          totalPrice: 230
         }
       ]
     };
+  },
+  methods: {
+    toOrder(id) {
+      this.$router.push({ name: "Order", params: { id: id } });
+    }
   }
 };
 </script>

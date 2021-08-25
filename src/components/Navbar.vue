@@ -69,7 +69,7 @@
         </li>
       </ul>
       <v-btn text @click="toSignUp"> {{ $t("__register") }} </v-btn> |
-      <v-btn text :to="{ name: 'UserProfileForm' }">
+      <v-btn text @click="toSignIn">
         {{ $t("__sign_in") }}
       </v-btn>
     </v-system-bar>
@@ -118,7 +118,7 @@
         </v-col>
       </v-row>
     </v-app-bar>
-    <!-- side bar -->
+    <!--mobile side bar -->
     <v-navigation-drawer v-model="drawer" absolute temporary left>
       <v-list nav dense expand>
         <template v-for="(item, i) in items">
@@ -239,7 +239,7 @@ export default {
         },
         {
           title: this.$t("__sign_in"),
-          to: { name: "SignIn" }
+          to: { name: "userAccountMobile" }
         }
       ]
     };
@@ -248,6 +248,9 @@ export default {
     search() {},
     toSignUp() {
       window.location.replace("https://apply.chia-market.com/sign-up");
+    },
+    toSignIn() {
+      this.$router.push({ name: "UserProfileForm" });
     }
   }
 };

@@ -76,7 +76,7 @@ export default {
         {
           action: "mdi-clipboard-list-outline",
           color: "primary",
-          to: { name: "UserPurchaseLists" },
+          to: { name: "UserOrders" },
           title: "購買清單"
         },
         {
