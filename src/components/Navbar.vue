@@ -250,7 +250,7 @@ export default {
       window.location.replace("https://apply.chia-market.com/sign-up");
     },
     toSignIn() {
-      this.$router.push({ name: "UserProfileForm" });
+      this.$router.push({ name: "ProfileForm" });
     }
   }
 };
