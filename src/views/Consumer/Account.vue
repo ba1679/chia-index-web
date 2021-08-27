@@ -67,26 +67,28 @@ export default {
           color: "primary",
           active: true,
           items: [
-            { title: "個人資料", to: { name: "UserProfileForm" } },
-            { title: "收件地址", to: { name: "UserAddress" } },
-            { title: "支付管理", to: { name: "UserPayment" } }
+            { title: "個人資料", to: { name: "ProfileForm" } },
+            { title: "收件地址", to: { name: "Address" } },
+            { title: "支付管理", to: { name: "Payment" } }
           ],
           title: "我的帳戶"
         },
         {
           action: "mdi-clipboard-list-outline",
           color: "primary",
-          to: { name: "UserOrders" },
+          to: { name: "Orders" },
           title: "購買清單"
         },
         {
-          action: "mdi-bell-circle-outline",
+          action: "mdi-bell-ring-outline",
           color: "orange",
+          to: { name: "Notify" },
           title: "通知總覽"
         },
         {
           action: "mdi-store",
           color: "orange",
+          to: { name: "FollowedStore" },
           title: "關注店家清單"
         }
       ]

@@ -43,32 +43,42 @@ const routes = [
   },
   {
     path: "/user-account",
-    component: () => import("@/views/User/UserAccount.vue"),
+    component: () => import("@/views/Consumer/Account.vue"),
     children: [
       {
         path: "",
-        name: "UserProfileForm",
-        component: () => import("@/views/User/UserProfileForm.vue")
+        name: "ProfileForm",
+        component: () => import("@/views/Consumer/ProfileForm.vue")
       },
       {
         path: "/order-list",
-        name: "UserOrders",
-        component: () => import("@/views/User/UserOrders.vue")
+        name: "Orders",
+        component: () => import("@/views/Consumer/Orders.vue")
       },
       {
         path: "/order-list/:id",
         name: "Order",
-        component: () => import("@/views/User/Order.vue")
+        component: () => import("@/views/Consumer/Order.vue")
       },
       {
         path: "/address",
-        name: "UserAddress",
-        component: () => import("@/views/User/UserAddress.vue")
+        name: "Address",
+        component: () => import("@/views/Consumer/Address.vue")
       },
       {
         path: "/payment",
-        name: "UserPayment",
-        component: () => import("@/views/User/UserPayment.vue")
+        name: "Payment",
+        component: () => import("@/views/Consumer/Payment.vue")
+      },
+      {
+        path: "/notify",
+        name: "Notify",
+        component: () => import("@/views/Consumer/Notify.vue")
+      },
+      {
+        path: "/followed",
+        name: "FollowedStore",
+        component: () => import("@/views/Consumer/FollowedStore.vue")
       }
     ]
   },
