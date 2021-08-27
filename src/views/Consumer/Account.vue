@@ -80,13 +80,15 @@ export default {
           title: "購買清單"
         },
         {
-          action: "mdi-bell-circle-outline",
+          action: "mdi-bell-ring-outline",
           color: "orange",
+          to: { name: "Notify" },
           title: "通知總覽"
         },
         {
           action: "mdi-store",
           color: "orange",
+          to: { name: "FollowedStore" },
           title: "關注店家清單"
         }
       ]
