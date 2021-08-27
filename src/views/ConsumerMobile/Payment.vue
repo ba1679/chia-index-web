@@ -1,9 +1,6 @@
 <template>
   <div>
-    <MobileTopBar
-      :title="'支付管理'"
-      :backPath="{ name: 'userAccountMobile' }"
-    />
+    <MobileTopBar :title="'支付管理'" :backPath="{ name: 'AccountMobile' }" />
     <v-card outlined class="mb-3">
       <v-card-title>
         信用卡

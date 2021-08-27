@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-  name: "UserMobilePage"
+  name: "ConsumerMobile"
 };
 </script>
 <style lang="scss" scoped>

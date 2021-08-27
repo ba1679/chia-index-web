@@ -1,9 +1,6 @@
 <template>
   <div>
-    <MobileTopBar
-      :backPath="{ name: 'userAccountMobile' }"
-      :title="'我的訂單'"
-    />
+    <MobileTopBar :backPath="{ name: 'AccountMobile' }" :title="'我的訂單'" />
     <v-container class="pa-0">
       <v-text-field
         hide-details

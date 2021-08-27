@@ -59,6 +59,7 @@
           class="d-flex flex-column"
           v-for="info in otherInfo"
           :key="info.icon"
+          @click="toPage(info.to)"
         >
           <v-icon large :color="info.color">{{ info.icon }}</v-icon>
           <div>{{ info.title }}</div>
@@ -69,7 +70,7 @@
 </template>
 <script>
 export default {
-  name: "UserAccountMobile",
+  name: "AccountMobile",
   data() {
     return {
       orderStatus: [
@@ -95,38 +96,40 @@ export default {
           icon: "mdi-account-edit-outline",
           title: "帳號資訊",
           color: "green",
-          to: { name: "UserProfileSetting" }
+          to: { name: "ProfileMobile" }
         },
         {
           icon: "mdi-map-marker-radius-outline",
           title: "收件地址",
           color: "orange",
-          to: { name: "UserAddressSetting" }
+          to: { name: "AddressMobile" }
         },
         {
           icon: "mdi-cash-lock",
           title: "支付管理",
           color: "red lighten-2",
-          to: { name: "UserPaymentSetting" }
+          to: { name: "PaymentMobile" }
         }
       ],
       otherInfo: [
         {
           icon: "mdi-bell-ring-outline",
           title: "通知",
-          color: "primary"
+          color: "primary",
+          to: { name: "NotifyMobile" }
         },
         {
           icon: "mdi-store",
           title: "關注店家",
-          color: "orange"
+          color: "orange",
+          to: { name: "FollowedStoreMobile" }
         }
       ]
     };
   },
   methods: {
     toOrders() {
-      this.$router.push({ name: "UserOrdersMobile" });
+      this.$router.push({ name: "OrdersMobile" });
     },
     toPage(path) {
       this.$router.push(path);
