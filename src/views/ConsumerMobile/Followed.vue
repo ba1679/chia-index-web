@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-100">
     <MobileTopBar
       :title="'關注店家清單'"
       :backPath="{ name: 'AccountMobile' }"

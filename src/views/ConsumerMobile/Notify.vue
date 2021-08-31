@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-100">
     <MobileTopBar :title="'通知總覽'" :backPath="{ name: 'AccountMobile' }" />
     <v-card class="my-3" flat link>
       <v-container>
