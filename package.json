@@ -13,6 +13,7 @@
     "date-fns": "^2.21.1",
     "firebase": "^8.4.3",
     "qrcode.vue": "^1.7.0",
+    "raw-loader": "^4.0.2",
     "vue": "^2.6.11",
     "vue-i18n": "^8.24.2",
     "vue-loading-overlay": "^3.4.2",

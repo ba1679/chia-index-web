@@ -2,7 +2,7 @@
   <div>
     <MobileTopBar
       :title="'帳號資訊設定'"
-      :backPath="{ name: 'userAccountMobile' }"
+      :backPath="{ name: 'AccountMobile' }"
       :actionText="'儲存'"
       @action="save"
     />

@@ -1,4 +1,4 @@
-# chia-manage-web
+# chia-consumer-web
 
 ## Project setup
 ```

@@ -242,8 +242,40 @@
   "__store_pricing_telegram_bot_price": "優惠價 $500/月",
   "__store_pricing_telegram_bot_SMS_price": "每則 0 元",
 
+  "__add_new_receive_address":"新增收件地址",
+  "__receive_zip_code": "郵遞區號",
+  "__receive_city": "城市",
+  "__receive_area": "區域",
+  "__receive_road": "路名",
+  "__receive_lane": "巷",
+  "__receive_alley": "弄",
+  "__receive_number": "號",
+  "__receive_sub_number":"之",
+  "__receive_floor": "樓",
+  "__receive_room": "室",
+
+  "__add_new_payment_credit":"新增信用卡",
+  "__add_new_payment_credit_name":"持卡人姓名",
+  "__add_new_payment_credit_num":"信用卡號碼",
+  "__add_new_payment_credit_type":"卡片種類",
+  "__add_new_payment_credit_expired":"到期日",
+  "__add_new_payment_credit_security":"安全驗證碼(3碼)",
+  "__add_new_payment_credit_bill_address":"信用卡帳單地址",
+  "__add_new_payment_bank":"新增銀行帳戶",
+  "__add_new_payment_bank_fullname":"全名",
+  "__add_new_payment_bank_ID":"身分證字號/統一證號/公司統編",
+  "__add_new_payment_bank_birth":"生日",
+  "__add_new_payment_address":"居住地址",
+
 
   "__register": "註冊",
   "__sign_in": "登入",
-  "__close": "關閉"
+  "__close": "關閉",
+  "__save": "儲存",
+  "__required": "必填",
+  "__postal_code_invalid": "無效的郵遞區號",
+  "__city_invalid": "無效的縣市",
+  "__area_invalid": "無效的區域",
+  "__road_invalid": "無效的路名",
+  "__num_invalid": "無效的號碼"
 }

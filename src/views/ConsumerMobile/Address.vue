@@ -2,13 +2,12 @@
   <div>
     <MobileTopBar
       :title="'收件地址設定'"
-      :backPath="{ name: 'userAccountMobile' }"
-      :actionText="'儲存'"
+      :backPath="{ name: 'AccountMobile' }"
       @action="save"
     />
     <v-container>
       <div class="d-flex">
-        <v-btn class="ml-auto" color="primary">
+        <v-btn class="ml-auto" color="primary" :to="{ name: 'NewAddressForm' }">
           新增收件地址
         </v-btn>
       </div>

@@ -239,7 +239,7 @@ export default {
         },
         {
           title: this.$t("__sign_in"),
-          to: { name: "userAccountMobile" }
+          to: { name: "AccountMobile" }
         }
       ]
     };

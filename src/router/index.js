@@ -84,33 +84,53 @@ const routes = [
   },
   // consumer page mobile
   {
-    path: "/mobile/user-account",
-    component: () => import("@/views/UserMobile/UserMobilePage.vue"),
+    path: "/mobile/account",
+    component: () => import("@/views/ConsumerMobile/ConsumerMobilePage.vue"),
     children: [
       {
         path: "/",
-        name: "userAccountMobile",
-        component: () => import("@/views/UserMobile/UserAccountMobile.vue")
+        name: "AccountMobile",
+        component: () => import("@/views/ConsumerMobile/Account.vue")
       },
       {
         path: "orders",
-        name: "UserOrdersMobile",
-        component: () => import("@/views/UserMobile/UserOrdersMobile.vue")
+        name: "OrdersMobile",
+        component: () => import("@/views/ConsumerMobile/Orders.vue")
       },
       {
-        path: "profile-setting",
-        name: "UserProfileSetting",
-        component: () => import("@/views/UserMobile/UserProfileSetting.vue")
+        path: "profile",
+        name: "ProfileMobile",
+        component: () => import("@/views/ConsumerMobile/Profile.vue")
       },
       {
-        path: "address-setting",
-        name: "UserAddressSetting",
-        component: () => import("@/views/UserMobile/UserAddressSetting.vue")
+        path: "address",
+        name: "AddressMobile",
+        component: () => import("@/views/ConsumerMobile/Address.vue")
       },
       {
-        path: "payment-setting",
-        name: "UserPaymentSetting",
-        component: () => import("@/views/UserMobile/UserPaymentSetting.vue")
+        path: "add-address",
+        name: "NewAddressForm",
+        component: () => import("@/views/ConsumerMobile/NewAddressForm.vue")
+      },
+      {
+        path: "payment",
+        name: "PaymentMobile",
+        component: () => import("@/views/ConsumerMobile/Payment.vue")
+      },
+      {
+        path: "add-payment/:method",
+        name: "NewPaymentForm",
+        component: () => import("@/views/ConsumerMobile/NewPaymentForm.vue")
+      },
+      {
+        path: "notify",
+        name: "NotifyMobile",
+        component: () => import("@/views/ConsumerMobile/Notify.vue")
+      },
+      {
+        path: "followed",
+        name: "FollowedStoreMobile",
+        component: () => import("@/views/ConsumerMobile/Followed.vue")
       }
     ]
   },
