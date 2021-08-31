@@ -118,6 +118,11 @@ const routes = [
         component: () => import("@/views/ConsumerMobile/Payment.vue")
       },
       {
+        path: "add-payment/:method",
+        name: "NewPaymentForm",
+        component: () => import("@/views/ConsumerMobile/NewPaymentForm.vue")
+      },
+      {
         path: "notify",
         name: "NotifyMobile",
         component: () => import("@/views/ConsumerMobile/Notify.vue")

@@ -45,7 +45,11 @@
       <v-divider />
       <v-card-actions>
         <!-- 換頁新增 -->
-        <v-btn text block>
+        <v-btn
+          text
+          block
+          :to="{ name: 'NewPaymentForm', params: { method: 'credit' } }"
+        >
           <v-icon color="primary" class="mr-2">mdi-plus-box-outline</v-icon>
           新增信用卡
         </v-btn>
@@ -112,7 +116,11 @@
       </v-card-text>
       <v-divider />
       <v-card-actions>
-        <v-btn text block>
+        <v-btn
+          text
+          block
+          :to="{ name: 'NewPaymentForm', params: { method: 'bank' } }"
+        >
           <v-icon color="primary" class="mr-2">mdi-plus-box-outline</v-icon>
           新增銀行帳號
         </v-btn>
