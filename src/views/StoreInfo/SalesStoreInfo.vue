@@ -265,6 +265,14 @@ export default {
       return texts;
     }
   },
+  data(){
+    return {
+      meta:{
+            title: '',
+            description: ''
+          }
+    }
+  },
   methods: {
     loadStore() {
       this.$store.dispatch("setIsLoading", true);
@@ -281,6 +289,36 @@ export default {
     },
     toStoreTelegramBot(){
       window.open(`http://t.me/${this.data.['telegram_bot_id']}`)
+    }
+  },
+   metaInfo(){
+    return {
+      title: this.meta.title,
+      meta:[ {
+        property: 'og:title',
+        content: this.meta.title,
+        vmid: 'og:title'
+      },
+      {
+        property: 'og:description',
+        content: this.meta.description,
+        vmid: 'og:description'
+      },
+      { name: 'description', content: this.meta.description ,vmid: 'description'},
+      ]
+    }
+  },
+  watch:{
+    data:{
+      immediate: true,
+      handler(val){
+        if(val){
+          this.meta = {
+            title: val.name,
+            description: val.description
+          }
+        }
+      }
     }
   },
   created() {

@@ -11,6 +11,9 @@ import "vue-loading-overlay/dist/vue-loading.css";
 Vue.component("loading-overlay", LoadingOverlay);
 Vue.filter("currency", currencyFilter);
 
+import VueMeta from "vue-meta";
+Vue.use(VueMeta);
+
 Vue.config.productionTip = false;
 
 // let app;
@@ -21,6 +24,11 @@ new Vue({
   store,
   i18n,
   vuetify,
+  mounted() {
+    setTimeout(() => {
+      document.dispatchEvent(new Event("x-app-rendered"));
+    }, 5000);
+  },
   render: h => h(App)
 }).$mount("#app");
 //   }
